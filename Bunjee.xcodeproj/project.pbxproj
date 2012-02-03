@@ -23,6 +23,28 @@
 		81200C4114DBF5E3003EF101 /* BunjeeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81200C2B14DBF5E3003EF101 /* BunjeeUI.framework */; };
 		81200C4714DBF5E3003EF101 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81200C4514DBF5E3003EF101 /* InfoPlist.strings */; };
 		81200C4A14DBF5E3003EF101 /* BunjeeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81200C4914DBF5E3003EF101 /* BunjeeUITests.m */; };
+		81200C6614DBF70C003EF101 /* BJCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5114DBF70C003EF101 /* BJCase.h */; };
+		81200C6714DBF70C003EF101 /* BJCase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5214DBF70C003EF101 /* BJCase.mm */; };
+		81200C6814DBF70C003EF101 /* BJController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5314DBF70C003EF101 /* BJController.h */; };
+		81200C6914DBF70C003EF101 /* BJController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5414DBF70C003EF101 /* BJController.mm */; };
+		81200C6A14DBF70C003EF101 /* BJData.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5514DBF70C003EF101 /* BJData.h */; };
+		81200C6B14DBF70C003EF101 /* BJData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5614DBF70C003EF101 /* BJData.mm */; };
+		81200C6C14DBF70C003EF101 /* BJDataDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5714DBF70C003EF101 /* BJDataDisplay.h */; };
+		81200C6D14DBF70C003EF101 /* BJDataDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5814DBF70C003EF101 /* BJDataDisplay.mm */; };
+		81200C6E14DBF70C003EF101 /* BJOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5914DBF70C003EF101 /* BJOperation.h */; };
+		81200C6F14DBF70C003EF101 /* BJOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5A14DBF70C003EF101 /* BJOperation.m */; };
+		81200C7014DBF70C003EF101 /* BJScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5B14DBF70C003EF101 /* BJScene.h */; };
+		81200C7114DBF70C003EF101 /* BJScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5C14DBF70C003EF101 /* BJScene.mm */; };
+		81200C7214DBF70C003EF101 /* BJWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5D14DBF70C003EF101 /* BJWorkspace.h */; };
+		81200C7314DBF70C003EF101 /* BJWorkspace.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C5E14DBF70C003EF101 /* BJWorkspace.mm */; };
+		81200C7414DBF70C003EF101 /* BJWorkspaceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C5F14DBF70C003EF101 /* BJWorkspaceController.h */; };
+		81200C7514DBF70C003EF101 /* BJWorkspaceController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C6014DBF70C003EF101 /* BJWorkspaceController.mm */; };
+		81200C7614DBF70C003EF101 /* vtkBJImagePlaneWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C6114DBF70C003EF101 /* vtkBJImagePlaneWidget.h */; };
+		81200C7714DBF70C003EF101 /* VTKSceneView.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C6214DBF70C003EF101 /* VTKSceneView.h */; };
+		81200C7814DBF70C003EF101 /* VTKSceneView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C6314DBF70C003EF101 /* VTKSceneView.mm */; };
+		81200C7914DBF70C003EF101 /* VTKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C6414DBF70C003EF101 /* VTKView.h */; };
+		81200C7A14DBF70C003EF101 /* VTKView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C6514DBF70C003EF101 /* VTKView.mm */; };
+		81200C7C14DBF7C1003EF101 /* Todo.md in Resources */ = {isa = PBXBuildFile; fileRef = 81200C7B14DBF7C0003EF101 /* Todo.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +92,28 @@
 		81200C4614DBF5E3003EF101 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		81200C4814DBF5E3003EF101 /* BunjeeUITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BunjeeUITests.h; sourceTree = "<group>"; };
 		81200C4914DBF5E3003EF101 /* BunjeeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BunjeeUITests.m; sourceTree = "<group>"; };
+		81200C5114DBF70C003EF101 /* BJCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJCase.h; sourceTree = "<group>"; };
+		81200C5214DBF70C003EF101 /* BJCase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJCase.mm; sourceTree = "<group>"; };
+		81200C5314DBF70C003EF101 /* BJController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJController.h; sourceTree = "<group>"; };
+		81200C5414DBF70C003EF101 /* BJController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJController.mm; sourceTree = "<group>"; };
+		81200C5514DBF70C003EF101 /* BJData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJData.h; sourceTree = "<group>"; };
+		81200C5614DBF70C003EF101 /* BJData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJData.mm; sourceTree = "<group>"; };
+		81200C5714DBF70C003EF101 /* BJDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJDataDisplay.h; sourceTree = "<group>"; };
+		81200C5814DBF70C003EF101 /* BJDataDisplay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJDataDisplay.mm; sourceTree = "<group>"; };
+		81200C5914DBF70C003EF101 /* BJOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJOperation.h; sourceTree = "<group>"; };
+		81200C5A14DBF70C003EF101 /* BJOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJOperation.m; sourceTree = "<group>"; };
+		81200C5B14DBF70C003EF101 /* BJScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJScene.h; sourceTree = "<group>"; };
+		81200C5C14DBF70C003EF101 /* BJScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJScene.mm; sourceTree = "<group>"; };
+		81200C5D14DBF70C003EF101 /* BJWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJWorkspace.h; sourceTree = "<group>"; };
+		81200C5E14DBF70C003EF101 /* BJWorkspace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJWorkspace.mm; sourceTree = "<group>"; };
+		81200C5F14DBF70C003EF101 /* BJWorkspaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJWorkspaceController.h; sourceTree = "<group>"; };
+		81200C6014DBF70C003EF101 /* BJWorkspaceController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJWorkspaceController.mm; sourceTree = "<group>"; };
+		81200C6114DBF70C003EF101 /* vtkBJImagePlaneWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vtkBJImagePlaneWidget.h; sourceTree = "<group>"; };
+		81200C6214DBF70C003EF101 /* VTKSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTKSceneView.h; sourceTree = "<group>"; };
+		81200C6314DBF70C003EF101 /* VTKSceneView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VTKSceneView.mm; sourceTree = "<group>"; };
+		81200C6414DBF70C003EF101 /* VTKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTKView.h; sourceTree = "<group>"; };
+		81200C6514DBF70C003EF101 /* VTKView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VTKView.mm; sourceTree = "<group>"; };
+		81200C7B14DBF7C0003EF101 /* Todo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +202,28 @@
 		81200BFF14DBF585003EF101 /* Bunjee */ = {
 			isa = PBXGroup;
 			children = (
+				81200C7B14DBF7C0003EF101 /* Todo.md */,
+				81200C5114DBF70C003EF101 /* BJCase.h */,
+				81200C5214DBF70C003EF101 /* BJCase.mm */,
+				81200C5314DBF70C003EF101 /* BJController.h */,
+				81200C5414DBF70C003EF101 /* BJController.mm */,
+				81200C5514DBF70C003EF101 /* BJData.h */,
+				81200C5614DBF70C003EF101 /* BJData.mm */,
+				81200C5714DBF70C003EF101 /* BJDataDisplay.h */,
+				81200C5814DBF70C003EF101 /* BJDataDisplay.mm */,
+				81200C5914DBF70C003EF101 /* BJOperation.h */,
+				81200C5A14DBF70C003EF101 /* BJOperation.m */,
+				81200C5B14DBF70C003EF101 /* BJScene.h */,
+				81200C5C14DBF70C003EF101 /* BJScene.mm */,
+				81200C5D14DBF70C003EF101 /* BJWorkspace.h */,
+				81200C5E14DBF70C003EF101 /* BJWorkspace.mm */,
+				81200C5F14DBF70C003EF101 /* BJWorkspaceController.h */,
+				81200C6014DBF70C003EF101 /* BJWorkspaceController.mm */,
+				81200C6114DBF70C003EF101 /* vtkBJImagePlaneWidget.h */,
+				81200C6214DBF70C003EF101 /* VTKSceneView.h */,
+				81200C6314DBF70C003EF101 /* VTKSceneView.mm */,
+				81200C6414DBF70C003EF101 /* VTKView.h */,
+				81200C6514DBF70C003EF101 /* VTKView.mm */,
 				81200C0614DBF585003EF101 /* Bunjee.h */,
 				81200C0714DBF585003EF101 /* Bunjee.m */,
 				81200C0014DBF585003EF101 /* Supporting Files */,
@@ -240,6 +306,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81200C6614DBF70C003EF101 /* BJCase.h in Headers */,
+				81200C6814DBF70C003EF101 /* BJController.h in Headers */,
+				81200C6A14DBF70C003EF101 /* BJData.h in Headers */,
+				81200C6C14DBF70C003EF101 /* BJDataDisplay.h in Headers */,
+				81200C6E14DBF70C003EF101 /* BJOperation.h in Headers */,
+				81200C7014DBF70C003EF101 /* BJScene.h in Headers */,
+				81200C7214DBF70C003EF101 /* BJWorkspace.h in Headers */,
+				81200C7414DBF70C003EF101 /* BJWorkspaceController.h in Headers */,
+				81200C7614DBF70C003EF101 /* vtkBJImagePlaneWidget.h in Headers */,
+				81200C7714DBF70C003EF101 /* VTKSceneView.h in Headers */,
+				81200C7914DBF70C003EF101 /* VTKView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81200C0414DBF585003EF101 /* InfoPlist.strings in Resources */,
+				81200C7C14DBF7C1003EF101 /* Todo.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +504,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				81200C0814DBF585003EF101 /* Bunjee.m in Sources */,
+				81200C6714DBF70C003EF101 /* BJCase.mm in Sources */,
+				81200C6914DBF70C003EF101 /* BJController.mm in Sources */,
+				81200C6B14DBF70C003EF101 /* BJData.mm in Sources */,
+				81200C6D14DBF70C003EF101 /* BJDataDisplay.mm in Sources */,
+				81200C6F14DBF70C003EF101 /* BJOperation.m in Sources */,
+				81200C7114DBF70C003EF101 /* BJScene.mm in Sources */,
+				81200C7314DBF70C003EF101 /* BJWorkspace.mm in Sources */,
+				81200C7514DBF70C003EF101 /* BJWorkspaceController.mm in Sources */,
+				81200C7814DBF70C003EF101 /* VTKSceneView.mm in Sources */,
+				81200C7A14DBF70C003EF101 /* VTKView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
