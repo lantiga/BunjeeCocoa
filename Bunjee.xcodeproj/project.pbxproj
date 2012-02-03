@@ -46,6 +46,33 @@
 		81200C7A14DBF70C003EF101 /* VTKView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C6514DBF70C003EF101 /* VTKView.mm */; };
 		81200C7C14DBF7C1003EF101 /* Todo.md in Resources */ = {isa = PBXBuildFile; fileRef = 81200C7B14DBF7C0003EF101 /* Todo.md */; };
 		81200C7E14DBF96B003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200C7D14DBF96A003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib */; };
+		81200C9314DBFA2C003EF101 /* BJCaseBrowserController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8014DBFA2C003EF101 /* BJCaseBrowserController.h */; };
+		81200C9414DBFA2C003EF101 /* BJCaseBrowserController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8114DBFA2C003EF101 /* BJCaseBrowserController.mm */; };
+		81200C9514DBFA2C003EF101 /* BJCaseDBController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8214DBFA2C003EF101 /* BJCaseDBController.h */; };
+		81200C9614DBFA2C003EF101 /* BJCaseDBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8314DBFA2C003EF101 /* BJCaseDBController.m */; };
+		81200C9714DBFA2C003EF101 /* BJCaseInfoController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8414DBFA2C003EF101 /* BJCaseInfoController.h */; };
+		81200C9814DBFA2C003EF101 /* BJCaseInfoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8514DBFA2C003EF101 /* BJCaseInfoController.mm */; };
+		81200C9914DBFA2C003EF101 /* BJConsoleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8614DBFA2C003EF101 /* BJConsoleController.h */; };
+		81200C9A14DBFA2C003EF101 /* BJConsoleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8714DBFA2C003EF101 /* BJConsoleController.mm */; };
+		81200C9B14DBFA2C003EF101 /* BJDisplayEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8814DBFA2C003EF101 /* BJDisplayEditorController.h */; };
+		81200C9C14DBFA2C003EF101 /* BJDisplayEditorController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8914DBFA2C003EF101 /* BJDisplayEditorController.mm */; };
+		81200C9D14DBFA2C003EF101 /* BJRenderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8A14DBFA2C003EF101 /* BJRenderViewController.h */; };
+		81200C9E14DBFA2C003EF101 /* BJRenderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8B14DBFA2C003EF101 /* BJRenderViewController.mm */; };
+		81200C9F14DBFA2C003EF101 /* BJSceneBrowserController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8C14DBFA2C003EF101 /* BJSceneBrowserController.h */; };
+		81200CA014DBFA2C003EF101 /* BJSceneBrowserController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8D14DBFA2C003EF101 /* BJSceneBrowserController.mm */; };
+		81200CA114DBFA2C003EF101 /* BJSceneViewPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C8E14DBFA2C003EF101 /* BJSceneViewPanel.h */; };
+		81200CA214DBFA2C003EF101 /* BJSceneViewPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C8F14DBFA2C003EF101 /* BJSceneViewPanel.mm */; };
+		81200CA314DBFA2C003EF101 /* BJSceneViewPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C9014DBFA2C003EF101 /* BJSceneViewPanelController.h */; };
+		81200CA414DBFA2C003EF101 /* BJSceneViewPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C9114DBFA2C003EF101 /* BJSceneViewPanelController.mm */; };
+		81200CA514DBFA2C003EF101 /* NSMysteryDocument.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 81200C9214DBFA2C003EF101 /* NSMysteryDocument.tiff */; };
+		81200CAE14DBFA50003EF101 /* CaseBrowserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CA614DBFA50003EF101 /* CaseBrowserView.xib */; };
+		81200CAF14DBFA50003EF101 /* CaseDBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CA714DBFA50003EF101 /* CaseDBView.xib */; };
+		81200CB014DBFA50003EF101 /* CaseInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CA814DBFA50003EF101 /* CaseInfoView.xib */; };
+		81200CB114DBFA50003EF101 /* ConsoleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CA914DBFA50003EF101 /* ConsoleView.xib */; };
+		81200CB214DBFA50003EF101 /* DisplayEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CAA14DBFA50003EF101 /* DisplayEditor.xib */; };
+		81200CB314DBFA50003EF101 /* RenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CAB14DBFA50003EF101 /* RenderView.xib */; };
+		81200CB414DBFA50003EF101 /* SceneBrowserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CAC14DBFA50003EF101 /* SceneBrowserView.xib */; };
+		81200CB514DBFA50003EF101 /* SceneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200CAD14DBFA50003EF101 /* SceneView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +143,33 @@
 		81200C6514DBF70C003EF101 /* VTKView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VTKView.mm; sourceTree = "<group>"; };
 		81200C7B14DBF7C0003EF101 /* Todo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		81200C7D14DBF96A003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkspaceSaveSceneAsAccessoryView.xib; sourceTree = "<group>"; };
+		81200C8014DBFA2C003EF101 /* BJCaseBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJCaseBrowserController.h; sourceTree = "<group>"; };
+		81200C8114DBFA2C003EF101 /* BJCaseBrowserController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJCaseBrowserController.mm; sourceTree = "<group>"; };
+		81200C8214DBFA2C003EF101 /* BJCaseDBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJCaseDBController.h; sourceTree = "<group>"; };
+		81200C8314DBFA2C003EF101 /* BJCaseDBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJCaseDBController.m; sourceTree = "<group>"; };
+		81200C8414DBFA2C003EF101 /* BJCaseInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJCaseInfoController.h; sourceTree = "<group>"; };
+		81200C8514DBFA2C003EF101 /* BJCaseInfoController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJCaseInfoController.mm; sourceTree = "<group>"; };
+		81200C8614DBFA2C003EF101 /* BJConsoleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJConsoleController.h; sourceTree = "<group>"; };
+		81200C8714DBFA2C003EF101 /* BJConsoleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJConsoleController.mm; sourceTree = "<group>"; };
+		81200C8814DBFA2C003EF101 /* BJDisplayEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJDisplayEditorController.h; sourceTree = "<group>"; };
+		81200C8914DBFA2C003EF101 /* BJDisplayEditorController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJDisplayEditorController.mm; sourceTree = "<group>"; };
+		81200C8A14DBFA2C003EF101 /* BJRenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJRenderViewController.h; sourceTree = "<group>"; };
+		81200C8B14DBFA2C003EF101 /* BJRenderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJRenderViewController.mm; sourceTree = "<group>"; };
+		81200C8C14DBFA2C003EF101 /* BJSceneBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJSceneBrowserController.h; sourceTree = "<group>"; };
+		81200C8D14DBFA2C003EF101 /* BJSceneBrowserController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJSceneBrowserController.mm; sourceTree = "<group>"; };
+		81200C8E14DBFA2C003EF101 /* BJSceneViewPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJSceneViewPanel.h; sourceTree = "<group>"; };
+		81200C8F14DBFA2C003EF101 /* BJSceneViewPanel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJSceneViewPanel.mm; sourceTree = "<group>"; };
+		81200C9014DBFA2C003EF101 /* BJSceneViewPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJSceneViewPanelController.h; sourceTree = "<group>"; };
+		81200C9114DBFA2C003EF101 /* BJSceneViewPanelController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BJSceneViewPanelController.mm; sourceTree = "<group>"; };
+		81200C9214DBFA2C003EF101 /* NSMysteryDocument.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = NSMysteryDocument.tiff; sourceTree = "<group>"; };
+		81200CA614DBFA50003EF101 /* CaseBrowserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaseBrowserView.xib; sourceTree = "<group>"; };
+		81200CA714DBFA50003EF101 /* CaseDBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaseDBView.xib; sourceTree = "<group>"; };
+		81200CA814DBFA50003EF101 /* CaseInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaseInfoView.xib; sourceTree = "<group>"; };
+		81200CA914DBFA50003EF101 /* ConsoleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsoleView.xib; sourceTree = "<group>"; };
+		81200CAA14DBFA50003EF101 /* DisplayEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayEditor.xib; sourceTree = "<group>"; };
+		81200CAB14DBFA50003EF101 /* RenderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RenderView.xib; sourceTree = "<group>"; };
+		81200CAC14DBFA50003EF101 /* SceneBrowserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneBrowserView.xib; sourceTree = "<group>"; };
+		81200CAD14DBFA50003EF101 /* SceneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,8 +320,27 @@
 		81200C2D14DBF5E3003EF101 /* BunjeeUI */ = {
 			isa = PBXGroup;
 			children = (
+				81200C8014DBFA2C003EF101 /* BJCaseBrowserController.h */,
+				81200C8114DBFA2C003EF101 /* BJCaseBrowserController.mm */,
+				81200C8214DBFA2C003EF101 /* BJCaseDBController.h */,
+				81200C8314DBFA2C003EF101 /* BJCaseDBController.m */,
+				81200C8414DBFA2C003EF101 /* BJCaseInfoController.h */,
+				81200C8514DBFA2C003EF101 /* BJCaseInfoController.mm */,
+				81200C8614DBFA2C003EF101 /* BJConsoleController.h */,
+				81200C8714DBFA2C003EF101 /* BJConsoleController.mm */,
+				81200C8814DBFA2C003EF101 /* BJDisplayEditorController.h */,
+				81200C8914DBFA2C003EF101 /* BJDisplayEditorController.mm */,
+				81200C8A14DBFA2C003EF101 /* BJRenderViewController.h */,
+				81200C8B14DBFA2C003EF101 /* BJRenderViewController.mm */,
+				81200C8C14DBFA2C003EF101 /* BJSceneBrowserController.h */,
+				81200C8D14DBFA2C003EF101 /* BJSceneBrowserController.mm */,
+				81200C8E14DBFA2C003EF101 /* BJSceneViewPanel.h */,
+				81200C8F14DBFA2C003EF101 /* BJSceneViewPanel.mm */,
+				81200C9014DBFA2C003EF101 /* BJSceneViewPanelController.h */,
+				81200C9114DBFA2C003EF101 /* BJSceneViewPanelController.mm */,
 				81200C3414DBF5E3003EF101 /* BunjeeUI.h */,
 				81200C3514DBF5E3003EF101 /* BunjeeUI.m */,
+				81200CB614DBFA61003EF101 /* Resources */,
 				81200C2E14DBF5E3003EF101 /* Supporting Files */,
 			);
 			path = BunjeeUI;
@@ -310,6 +383,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		81200CB614DBFA61003EF101 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				81200CA614DBFA50003EF101 /* CaseBrowserView.xib */,
+				81200CA714DBFA50003EF101 /* CaseDBView.xib */,
+				81200CA814DBFA50003EF101 /* CaseInfoView.xib */,
+				81200CA914DBFA50003EF101 /* ConsoleView.xib */,
+				81200CAA14DBFA50003EF101 /* DisplayEditor.xib */,
+				81200CAB14DBFA50003EF101 /* RenderView.xib */,
+				81200CAC14DBFA50003EF101 /* SceneBrowserView.xib */,
+				81200CAD14DBFA50003EF101 /* SceneView.xib */,
+				81200C9214DBFA2C003EF101 /* NSMysteryDocument.tiff */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -335,6 +424,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81200C9314DBFA2C003EF101 /* BJCaseBrowserController.h in Headers */,
+				81200C9514DBFA2C003EF101 /* BJCaseDBController.h in Headers */,
+				81200C9714DBFA2C003EF101 /* BJCaseInfoController.h in Headers */,
+				81200C9914DBFA2C003EF101 /* BJConsoleController.h in Headers */,
+				81200C9B14DBFA2C003EF101 /* BJDisplayEditorController.h in Headers */,
+				81200C9D14DBFA2C003EF101 /* BJRenderViewController.h in Headers */,
+				81200C9F14DBFA2C003EF101 /* BJSceneBrowserController.h in Headers */,
+				81200CA114DBFA2C003EF101 /* BJSceneViewPanel.h in Headers */,
+				81200CA314DBFA2C003EF101 /* BJSceneViewPanelController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +566,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				81200C3214DBF5E3003EF101 /* InfoPlist.strings in Resources */,
+				81200CA514DBFA2C003EF101 /* NSMysteryDocument.tiff in Resources */,
+				81200CAE14DBFA50003EF101 /* CaseBrowserView.xib in Resources */,
+				81200CAF14DBFA50003EF101 /* CaseDBView.xib in Resources */,
+				81200CB014DBFA50003EF101 /* CaseInfoView.xib in Resources */,
+				81200CB114DBFA50003EF101 /* ConsoleView.xib in Resources */,
+				81200CB214DBFA50003EF101 /* DisplayEditor.xib in Resources */,
+				81200CB314DBFA50003EF101 /* RenderView.xib in Resources */,
+				81200CB414DBFA50003EF101 /* SceneBrowserView.xib in Resources */,
+				81200CB514DBFA50003EF101 /* SceneView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +649,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				81200C3614DBF5E3003EF101 /* BunjeeUI.m in Sources */,
+				81200C9414DBFA2C003EF101 /* BJCaseBrowserController.mm in Sources */,
+				81200C9614DBFA2C003EF101 /* BJCaseDBController.m in Sources */,
+				81200C9814DBFA2C003EF101 /* BJCaseInfoController.mm in Sources */,
+				81200C9A14DBFA2C003EF101 /* BJConsoleController.mm in Sources */,
+				81200C9C14DBFA2C003EF101 /* BJDisplayEditorController.mm in Sources */,
+				81200C9E14DBFA2C003EF101 /* BJRenderViewController.mm in Sources */,
+				81200CA014DBFA2C003EF101 /* BJSceneBrowserController.mm in Sources */,
+				81200CA214DBFA2C003EF101 /* BJSceneViewPanel.mm in Sources */,
+				81200CA414DBFA2C003EF101 /* BJSceneViewPanelController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
+	<data>
+		<int key="IBDocument.SystemTarget">1070</int>
+		<string key="IBDocument.SystemVersion">11D50</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
+		<string key="IBDocument.AppKitVersion">1138.32</string>
+		<string key="IBDocument.HIToolboxVersion">568.00</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
+			<string key="NS.object.0">1938</string>
+		</object>
+		<array key="IBDocument.IntegratedClassDependencies">
+			<string>NSCustomView</string>
+			<string>NSBrowser</string>
+			<string>NSSegmentedCell</string>
+			<string>NSCustomObject</string>
+			<string>NSSegmentedControl</string>
+		</array>
+		<array key="IBDocument.PluginDependencies">
+			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+		</array>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
+		</object>
+		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
+			<object class="NSCustomObject" id="1001">
+				<string key="NSClassName">BJCaseBrowserController</string>
+			</object>
+			<object class="NSCustomObject" id="1003">
+				<string key="NSClassName">FirstResponder</string>
+			</object>
+			<object class="NSCustomObject" id="1004">
+				<string key="NSClassName">NSApplication</string>
+			</object>
+			<object class="NSCustomView" id="757586953">
+				<reference key="NSNextResponder"/>
+				<int key="NSvFlags">274</int>
+				<array class="NSMutableArray" key="NSSubviews">
+					<object class="NSSegmentedControl" id="751007995">
+						<reference key="NSNextResponder" ref="757586953"/>
+						<int key="NSvFlags">289</int>
+						<string key="NSFrame">{{484, 4}, {82, 17}}</string>
+						<reference key="NSSuperview" ref="757586953"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSSegmentedCell" key="NSCell" id="330195968">
+							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags2">262144</int>
+							<object class="NSFont" key="NSSupport" id="22">
+								<string key="NSName">LucidaGrande</string>
+								<double key="NSSize">9</double>
+								<int key="NSfFlags">3614</int>
+							</object>
+							<reference key="NSControlView" ref="751007995"/>
+							<array class="NSMutableArray" key="NSSegmentImages">
+								<object class="NSSegmentItem">
+									<string key="NSSegmentItemLabel">Browse case DB</string>
+									<string key="NSSegmentItemTooltip">Open case image in OsiriX</string>
+									<int key="NSSegmentItemTag">7</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+							</array>
+							<int key="NSSelectedSegment">-1</int>
+							<int key="NSTrackingMode">2</int>
+							<int key="NSSegmentStyle">4</int>
+						</object>
+					</object>
+					<object class="NSSegmentedControl" id="21352582">
+						<reference key="NSNextResponder" ref="757586953"/>
+						<int key="NSvFlags">265</int>
+						<string key="NSFrame">{{486, 263}, {78, 17}}</string>
+						<reference key="NSSuperview" ref="757586953"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="734731"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSSegmentedCell" key="NSCell" id="527074458">
+							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags2">262144</int>
+							<reference key="NSSupport" ref="22"/>
+							<reference key="NSControlView" ref="21352582"/>
+							<array class="NSMutableArray" key="NSSegmentImages">
+								<object class="NSSegmentItem">
+									<string key="NSSegmentItemLabel">Open in OsiriX</string>
+									<string key="NSSegmentItemTooltip">Open case image in OsiriX</string>
+									<int key="NSSegmentItemTag">6</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+							</array>
+							<int key="NSSelectedSegment">-1</int>
+							<int key="NSTrackingMode">2</int>
+							<int key="NSSegmentStyle">4</int>
+						</object>
+					</object>
+					<object class="NSSegmentedControl" id="1027430666">
+						<reference key="NSNextResponder" ref="757586953"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{5, 4}, {138, 17}}</string>
+						<reference key="NSSuperview" ref="757586953"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="751007995"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSSegmentedCell" key="NSCell" id="187068191">
+							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags2">262144</int>
+							<reference key="NSSupport" ref="22"/>
+							<reference key="NSControlView" ref="1027430666"/>
+							<array class="NSMutableArray" key="NSSegmentImages">
+								<object class="NSSegmentItem">
+									<string key="NSSegmentItemLabel">New from series</string>
+									<string key="NSSegmentItemTooltip">New case from series...</string>
+									<int key="NSSegmentItemTag">5</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+								<object class="NSSegmentItem">
+									<string key="NSSegmentItemLabel">Add data</string>
+									<string key="NSSegmentItemTooltip">Add data to case...</string>
+									<int key="NSSegmentItemTag">8</int>
+									<bool key="NSSegmentItemDisabled">YES</bool>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+							</array>
+							<int key="NSSelectedSegment">1</int>
+							<int key="NSTrackingMode">2</int>
+							<int key="NSSegmentStyle">4</int>
+						</object>
+					</object>
+					<object class="NSSegmentedControl" id="13988394">
+						<reference key="NSNextResponder" ref="757586953"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{5, 263}, {249, 17}}</string>
+						<reference key="NSSuperview" ref="757586953"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="21352582"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSSegmentedCell" key="NSCell" id="945023412">
+							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags2">262144</int>
+							<reference key="NSSupport" ref="22"/>
+							<reference key="NSControlView" ref="13988394"/>
+							<array class="NSMutableArray" key="NSSegmentImages">
+								<object class="NSSegmentItem">
+									<double key="NSSegmentItemWidth">49</double>
+									<string key="NSSegmentItemLabel">New</string>
+									<string key="NSSegmentItemTooltip">New case</string>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+								<object class="NSSegmentItem">
+									<double key="NSSegmentItemWidth">49</double>
+									<string key="NSSegmentItemLabel">Open</string>
+									<string key="NSSegmentItemTooltip">Open case...</string>
+									<int key="NSSegmentItemTag">1</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+								<object class="NSSegmentItem">
+									<double key="NSSegmentItemWidth">49</double>
+									<string key="NSSegmentItemLabel">Save</string>
+									<string key="NSSegmentItemTooltip">Save case</string>
+									<int key="NSSegmentItemTag">2</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+								<object class="NSSegmentItem">
+									<double key="NSSegmentItemWidth">48</double>
+									<string key="NSSegmentItemLabel">Save as</string>
+									<string key="NSSegmentItemTooltip">Save case as...</string>
+									<int key="NSSegmentItemTag">3</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+								<object class="NSSegmentItem">
+									<double key="NSSegmentItemWidth">48</double>
+									<string key="NSSegmentItemLabel">Close</string>
+									<string key="NSSegmentItemTooltip">Close case</string>
+									<int key="NSSegmentItemTag">4</int>
+									<int key="NSSegmentItemImageScaling">0</int>
+								</object>
+							</array>
+							<int key="NSSelectedSegment">2</int>
+							<int key="NSTrackingMode">2</int>
+							<int key="NSSegmentStyle">4</int>
+						</object>
+					</object>
+					<object class="NSBrowser" id="734731">
+						<reference key="NSNextResponder" ref="757586953"/>
+						<int key="NSvFlags">274</int>
+						<string key="NSFrame">{{0, 24}, {572, 235}}</string>
+						<reference key="NSSuperview" ref="757586953"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1027430666"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSBrowserCell" key="NSCellPrototype">
+							<int key="NSCellFlags">67239488</int>
+							<int key="NSCellFlags2">2048</int>
+							<string type="base64-UTF8" key="NSContents">IA</string>
+							<object class="NSFont" key="NSSupport">
+								<string key="NSName">LucidaGrande</string>
+								<double key="NSSize">12</double>
+								<int key="NSfFlags">16</int>
+							</object>
+						</object>
+						<string key="NSPathSeparator">/</string>
+						<int key="NSMinColumnWidth">150</int>
+						<int key="NSNumberOfVisibleColumns">3</int>
+						<int key="NSColumnResizingType">1</int>
+						<double key="NSPreferedColumnWidth">200</double>
+						<bool key="NSAllowsTypeSelect">YES</bool>
+						<int key="NSBrFlags">134299650</int>
+						<double key="NSBrowserRowHeight">17</double>
+					</object>
+				</array>
+				<string key="NSFrameSize">{572, 285}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="13988394"/>
+				<string key="NSClassName">NSView</string>
+			</object>
+		</array>
+		<object class="IBObjectContainer" key="IBDocument.Objects">
+			<array class="NSMutableArray" key="connectionRecords">
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">caseBrowserPanel</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="757586953"/>
+					</object>
+					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">caseBrowserView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="734731"/>
+					</object>
+					<int key="connectionID">34</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="757586953"/>
+					</object>
+					<int key="connectionID">35</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">browserClicked:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="734731"/>
+					</object>
+					<int key="connectionID">55</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">caseFileAction:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="13988394"/>
+					</object>
+					<int key="connectionID">76</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">caseFileAction:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1027430666"/>
+					</object>
+					<int key="connectionID">77</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">caseFileAction:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="21352582"/>
+					</object>
+					<int key="connectionID">86</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">caseFileAction:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="751007995"/>
+					</object>
+					<int key="connectionID">89</int>
+				</object>
+			</array>
+			<object class="IBMutableOrderedSet" key="objectRecords">
+				<array key="orderedObjects">
+					<object class="IBObjectRecord">
+						<int key="objectID">0</int>
+						<array key="object" id="0"/>
+						<reference key="children" ref="1000"/>
+						<nil key="parent"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-2</int>
+						<reference key="object" ref="1001"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">File's Owner</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-1</int>
+						<reference key="object" ref="1003"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">First Responder</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-3</int>
+						<reference key="object" ref="1004"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Application</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">19</int>
+						<reference key="object" ref="757586953"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="734731"/>
+							<reference ref="13988394"/>
+							<reference ref="1027430666"/>
+							<reference ref="21352582"/>
+							<reference ref="751007995"/>
+						</array>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Case Browser View</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">28</int>
+						<reference key="object" ref="734731"/>
+						<reference key="parent" ref="757586953"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">66</int>
+						<reference key="object" ref="13988394"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="945023412"/>
+						</array>
+						<reference key="parent" ref="757586953"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">67</int>
+						<reference key="object" ref="945023412"/>
+						<reference key="parent" ref="13988394"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">74</int>
+						<reference key="object" ref="1027430666"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="187068191"/>
+						</array>
+						<reference key="parent" ref="757586953"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">75</int>
+						<reference key="object" ref="187068191"/>
+						<reference key="parent" ref="1027430666"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">84</int>
+						<reference key="object" ref="21352582"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="527074458"/>
+						</array>
+						<reference key="parent" ref="757586953"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">85</int>
+						<reference key="object" ref="527074458"/>
+						<reference key="parent" ref="21352582"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">87</int>
+						<reference key="object" ref="751007995"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="330195968"/>
+						</array>
+						<reference key="parent" ref="757586953"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">88</int>
+						<reference key="object" ref="330195968"/>
+						<reference key="parent" ref="751007995"/>
+					</object>
+				</array>
+			</object>
+			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="66.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="67.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<integer value="0" key="67.IBSegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<integer value="1" key="75.IBSegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<string key="84.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="85.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<integer value="1" key="85.IBSegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<string key="87.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="88.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<integer value="1" key="88.IBSegmentedControlInspectorSelectedSegmentMetadataKey"/>
+			</dictionary>
+			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
+			<nil key="activeLocalization"/>
+			<dictionary class="NSMutableDictionary" key="localizations"/>
+			<nil key="sourceID"/>
+			<int key="maxID">89</int>
+		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">BJCaseBrowserController</string>
+					<string key="superclassName">NSViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addImageToCase:">id</string>
+						<string key="addSurfaceToCase:">id</string>
+						<string key="browserClicked:">id</string>
+						<string key="caseFileAction:">id</string>
+						<string key="closeCase:">id</string>
+						<string key="newCase:">id</string>
+						<string key="newCaseFromImage:">id</string>
+						<string key="openCase:">id</string>
+						<string key="openCaseDB:">id</string>
+						<string key="openStudyInOsiriX:">id</string>
+						<string key="removeAllItemsFromCase:">id</string>
+						<string key="removeItemFromCase:">id</string>
+						<string key="saveCase:">id</string>
+						<string key="saveCaseAs:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addImageToCase:">
+							<string key="name">addImageToCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="addSurfaceToCase:">
+							<string key="name">addSurfaceToCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="browserClicked:">
+							<string key="name">browserClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="caseFileAction:">
+							<string key="name">caseFileAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="closeCase:">
+							<string key="name">closeCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="newCase:">
+							<string key="name">newCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="newCaseFromImage:">
+							<string key="name">newCaseFromImage:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openCase:">
+							<string key="name">openCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openCaseDB:">
+							<string key="name">openCaseDB:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openStudyInOsiriX:">
+							<string key="name">openStudyInOsiriX:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="removeAllItemsFromCase:">
+							<string key="name">removeAllItemsFromCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="removeItemFromCase:">
+							<string key="name">removeItemFromCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveCase:">
+							<string key="name">saveCase:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveCaseAs:">
+							<string key="name">saveCaseAs:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="caseBrowserPanel">NSView</string>
+						<string key="caseBrowserView">NSBrowser</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="caseBrowserPanel">
+							<string key="name">caseBrowserPanel</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="caseBrowserView">
+							<string key="name">caseBrowserView</string>
+							<string key="candidateClassName">NSBrowser</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BJCaseBrowserController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
+		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+	</data>
+</archive>
