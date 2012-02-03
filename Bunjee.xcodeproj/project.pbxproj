@@ -45,6 +45,7 @@
 		81200C7914DBF70C003EF101 /* VTKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 81200C6414DBF70C003EF101 /* VTKView.h */; };
 		81200C7A14DBF70C003EF101 /* VTKView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81200C6514DBF70C003EF101 /* VTKView.mm */; };
 		81200C7C14DBF7C1003EF101 /* Todo.md in Resources */ = {isa = PBXBuildFile; fileRef = 81200C7B14DBF7C0003EF101 /* Todo.md */; };
+		81200C7E14DBF96B003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81200C7D14DBF96A003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		81200C6414DBF70C003EF101 /* VTKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTKView.h; sourceTree = "<group>"; };
 		81200C6514DBF70C003EF101 /* VTKView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VTKView.mm; sourceTree = "<group>"; };
 		81200C7B14DBF7C0003EF101 /* Todo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
+		81200C7D14DBF96A003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkspaceSaveSceneAsAccessoryView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				81200C6514DBF70C003EF101 /* VTKView.mm */,
 				81200C0614DBF585003EF101 /* Bunjee.h */,
 				81200C0714DBF585003EF101 /* Bunjee.m */,
+				81200C7F14DBF97C003EF101 /* Resources */,
 				81200C0014DBF585003EF101 /* Supporting Files */,
 			);
 			path = Bunjee;
@@ -297,6 +300,14 @@
 				81200C4514DBF5E3003EF101 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81200C7F14DBF97C003EF101 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				81200C7D14DBF96A003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +451,7 @@
 			files = (
 				81200C0414DBF585003EF101 /* InfoPlist.strings in Resources */,
 				81200C7C14DBF7C1003EF101 /* Todo.md in Resources */,
+				81200C7E14DBF96B003EF101 /* WorkspaceSaveSceneAsAccessoryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
