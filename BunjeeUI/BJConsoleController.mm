@@ -6,14 +6,14 @@
 //
 
 #import "BJConsoleController.h"
-#import "BJCase.h"
-#import "BJData.h"
+#import "Bunjee/BJCase.h"
+#import "Bunjee/BJData.h"
 
 
 @implementation BJConsoleController
 
 - (id)init {
-	self = [self initWithNibName:@"ConsoleView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"ConsoleView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 

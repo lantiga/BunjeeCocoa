@@ -7,10 +7,10 @@
 
 #import "BJDisplayEditorController.h"
 
-#import "BJDataDisplay.h"
-#import "BJData.h"
-#import "BJScene.h"
-#import "BJWorkspace.h"
+#import "Bunjee/BJDataDisplay.h"
+#import "Bunjee/BJData.h"
+#import "Bunjee/BJScene.h"
+#import "Bunjee/BJWorkspace.h"
 
 @implementation NSDictionary(propertyDictionary)
 
@@ -48,7 +48,7 @@
 @synthesize workspace;
 
 - (id)init {
-	self = [self initWithNibName:@"DisplayEditor" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"DisplayEditor" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 
@@ -147,7 +147,7 @@
 		
 	NSInteger tag = [controlTagToPropertyDict count];
 	[button setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:button] forKey:propertyName];
 }
 
@@ -208,7 +208,7 @@
 	NSInteger tag = [controlTagToPropertyDict count];
 	[textField setTag:tag];
 	[stepper setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObjects:textField,stepper,nil] forKey:propertyName];
 
 	if ([propertyDict objectForKey:@"MinValue"] != nil and [propertyDict objectForKey:@"MaxValue"] != nil) {
@@ -266,7 +266,7 @@
 		
 	NSInteger tag = [controlTagToPropertyDict count];
 	[textField setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:textField] forKey:propertyName];	
 }
 
@@ -303,7 +303,7 @@
 	
 	NSInteger tag = [controlTagToPropertyDict count];
 	[colorWell setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:colorWell] forKey:propertyName];
 }
 
@@ -358,7 +358,7 @@
 	
 	NSInteger tag = [controlTagToPropertyDict count];
 	[box setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:box] forKey:propertyName];
 }
 
@@ -414,7 +414,7 @@
 	
 	NSInteger tag = [controlTagToPropertyDict count];
 	[box setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:box] forKey:propertyName];
 }
 
@@ -461,7 +461,7 @@
 	
 	NSInteger tag = [controlTagToPropertyDict count];
 	[box setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:box] forKey:propertyName];
 }
 
@@ -503,7 +503,7 @@
 	
 	NSInteger tag = [controlTagToPropertyDict count];
 	[box setTag:tag];
-	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInt:tag]];
+	[controlTagToPropertyDict setObject:propertyName forKey:[NSNumber numberWithInteger:tag]];
 	[propertyToControlsDict setObject:[NSArray arrayWithObject:box] forKey:propertyName];	
 }
 
@@ -687,7 +687,7 @@
 	}
 	
 	CGFloat totalHeight = height - currentOrigin.y + 20.0 + yspacing;
-	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:totalHeight], @"Height", nil];
+	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:totalHeight], @"Height", nil];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"DisplayEditorHeightChanged" object:self userInfo:userInfo];
 }
 
@@ -743,7 +743,7 @@
 	else if ([[sender className] isEqualToString:@"NSColorWell"] == YES) {
 		value = [NSArchiver archivedDataWithRootObject:[sender color]];
 	}
-	NSString* propertyName = [controlTagToPropertyDict objectForKey:[NSNumber numberWithInt:[sender tag]]];
+	NSString* propertyName = [controlTagToPropertyDict objectForKey:[NSNumber numberWithInteger:[sender tag]]];
 	
 	NSString* type = [[[targetObject displayEditorPropertyList] objectForKey:propertyName] objectForKey:@"Type"];
 	if ([type isEqualToString:@"dataname"] == YES) {

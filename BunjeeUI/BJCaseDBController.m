@@ -8,7 +8,7 @@
 
 #import "BJCaseDBController.h"
 #import "BJWorkspaceController.h"
-#import "BJWorkspace.h"
+#import "Bunjee/BJWorkspace.h"
 
 @implementation BJCaseDBController
 
@@ -19,7 +19,7 @@
 @synthesize columnsNeedUpdate;
 
 - (id)init {
-	self = [self initWithNibName:@"CaseDBView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"CaseDBView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 

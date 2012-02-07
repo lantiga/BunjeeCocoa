@@ -187,7 +187,7 @@ public:
 	}
 	vtkCameraAnimationCallback()
 	{
-		this->Frame == -1;
+		this->Frame = -1;
 	}
 	vtkBJImagePlaneWidget* PlaneWidgetX;	
 	vtkBJImagePlaneWidget* PlaneWidgetY;	
@@ -241,7 +241,7 @@ public:
 		image->GetSpacing(spacing);
 		image->GetOrigin(origin);
 		image->GetExtent(extent);
-		int ijk[3];
+		NSInteger ijk[3];
 		double xyz[3];
 		if (planeWidget->GetUseContinuousCursor()) {
 			xyz[0] = cursorPosition[0];
@@ -547,7 +547,7 @@ int BJComputeDirection(double theVector[3]) {
 	return crosshairCallback;
 }
 
-- (void)setCrosshairAnnotationIJK:(int*)ijk XYZ:(double*)xyz scalar:(double)scalar wl:(double)wl ww:(double)ww {
+- (void)setCrosshairAnnotationIJK:(NSInteger*)ijk XYZ:(double*)xyz scalar:(double)scalar wl:(double)wl ww:(double)ww {
 	NSString* annotation = [NSString stringWithFormat:@"I: %d J: %d K: %d Value: %.2f\nX: %.2f Y: %.2f Z: %.2f\nWL: %.2f WW: %.2f",ijk[0],ijk[1],ijk[2],scalar,xyz[0],xyz[1],xyz[2],wl,ww];
 	crosshairAnnotationActor->SetInput([annotation UTF8String]);
 }
@@ -983,9 +983,9 @@ int BJComputeDirection(double theVector[3]) {
 
 	NSSet* invocations = [self invocationsForSignal:@"MouseMoved"];
 	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-							  [NSNumber numberWithFloat:factor],@"Factor",
-							  [NSNumber numberWithFloat:mouseLoc.x],@"MouseX",
-							  [NSNumber numberWithFloat:mouseLoc.y],@"MouseY",
+							  [NSNumber numberWithDouble:factor],@"Factor",
+							  [NSNumber numberWithDouble:mouseLoc.x],@"MouseX",
+							  [NSNumber numberWithDouble:mouseLoc.y],@"MouseY",
 							  self,@"VTKSceneView",
 							  nil];
 	
@@ -1097,9 +1097,9 @@ int BJComputeDirection(double theVector[3]) {
 
 	invocations = [self invocationsForSignal:@"LeftMouseDown"];
 	userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithFloat:factor],@"Factor",
-				[NSNumber numberWithFloat:mouseLoc.x],@"MouseX",
-				[NSNumber numberWithFloat:mouseLoc.y],@"MouseY",
+				[NSNumber numberWithDouble:factor],@"Factor",
+				[NSNumber numberWithDouble:mouseLoc.x],@"MouseX",
+				[NSNumber numberWithDouble:mouseLoc.y],@"MouseY",
 				self,@"VTKSceneView",
 				nil];
 	for (NSInvocation* invocation in invocations) {
@@ -1123,11 +1123,11 @@ int BJComputeDirection(double theVector[3]) {
 				{
 					NSSet* invocations = [self invocationsForSignal:@"LeftMouseDragged"];
 					NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-											  [NSNumber numberWithFloat:factor],@"Factor",
-											  [NSNumber numberWithFloat:mouseLoc.x],@"MouseX",
-											  [NSNumber numberWithFloat:mouseLoc.y],@"MouseY",
-											  [NSNumber numberWithFloat:previousMouseLocX],@"PreviousMouseX",
-											  [NSNumber numberWithFloat:previousMouseLocY],@"PreviousMouseY",
+											  [NSNumber numberWithDouble:factor],@"Factor",
+											  [NSNumber numberWithDouble:mouseLoc.x],@"MouseX",
+											  [NSNumber numberWithDouble:mouseLoc.y],@"MouseY",
+											  [NSNumber numberWithDouble:previousMouseLocX],@"PreviousMouseX",
+											  [NSNumber numberWithDouble:previousMouseLocY],@"PreviousMouseY",
 											  self,@"VTKSceneView",
 											  nil];
 					for (NSInvocation* invocation in invocations) {
@@ -1140,9 +1140,9 @@ int BJComputeDirection(double theVector[3]) {
 				{
 					NSSet* invocations = [self invocationsForSignal:@"LeftMouseUp"];
 					NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-											  [NSNumber numberWithFloat:factor],@"Factor",
-											  [NSNumber numberWithFloat:mouseLoc.x],@"MouseX",
-											  [NSNumber numberWithFloat:mouseLoc.y],@"MouseY",
+											  [NSNumber numberWithDouble:factor],@"Factor",
+											  [NSNumber numberWithDouble:mouseLoc.x],@"MouseX",
+											  [NSNumber numberWithDouble:mouseLoc.y],@"MouseY",
 											  self,@"VTKSceneView",
 											  nil];
 					for (NSInvocation* invocation in invocations) {
@@ -1156,10 +1156,10 @@ int BJComputeDirection(double theVector[3]) {
 			if (viewMode != 0 and toolId == SL) {
 				switch ([theEvent type]) {
 					case NSLeftMouseDragged:
-						[self setSlice:[self getSlice]+mouseLoc.y-previousMouseLocY];
+						[self setSlice:(int)([self getSlice]+mouseLoc.y-previousMouseLocY)];
 						break;
 					case NSLeftMouseUp:
-						[self setSlice:[self getSlice]+mouseLoc.y-previousMouseLocY];
+						[self setSlice:(int)([self getSlice]+mouseLoc.y-previousMouseLocY)];
 						keepOn = NO;
 					default:
 						break;
@@ -1589,11 +1589,11 @@ int BJComputeDirection(double theVector[3]) {
 	cameraAnimationCallback->PlaneWidgetX = planeWidgetX;
 	cameraAnimationCallback->PlaneWidgetY = planeWidgetY;
 	cameraAnimationCallback->PlaneWidgetZ = planeWidgetZ;
-	cameraAnimationCallback->FromViewAxis = viewAxis;
+	cameraAnimationCallback->FromViewAxis = (int)viewAxis;
 	cameraAnimationCallback->ViewMode = theViewMode;
 	cameraAnimationCallback->ViewAxis = theViewAxis;
-	cameraAnimationCallback->FromViewAxis = viewAxis;
-	cameraAnimationCallback->FromViewMode = viewMode;
+	cameraAnimationCallback->FromViewAxis = (int)viewAxis;
+	cameraAnimationCallback->FromViewMode = (int)viewMode;
 	cameraAnimationCallback->SceneView = self;
 	animationCue->AddObserver(vtkCommand::AnimationCueTickEvent,cameraAnimationCallback);
 	
@@ -1786,14 +1786,14 @@ int BJComputeDirection(double theVector[3]) {
 	[userInfo setObject:[NSNumber numberWithInt:[self getSlice:0]] forKey:@"X"];
 	[userInfo setObject:[NSNumber numberWithInt:[self getSlice:1]] forKey:@"Y"];
 	[userInfo setObject:[NSNumber numberWithInt:[self getSlice:2]] forKey:@"Z"];
-	[userInfo setObject:[NSNumber numberWithInt:viewAxis] forKey:@"ViewAxis"];
-	[userInfo setObject:[NSNumber numberWithInt:viewMode] forKey:@"ViewMode"];
+	[userInfo setObject:[NSNumber numberWithInt:(int)viewAxis] forKey:@"ViewAxis"];
+	[userInfo setObject:[NSNumber numberWithInt:(int)viewMode] forKey:@"ViewMode"];
 	[userInfo setObject:scene forKey:@"Scene"];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"SliceChanged" object:self userInfo:userInfo];
 }
 
 - (void)setSlice:(int)theSlice {
-	[self setSliceNoNotify:theSlice forAxis:viewAxis];
+	[self setSliceNoNotify:theSlice forAxis:(int)viewAxis];
 	[self notifySliceChanged];
 }
 
@@ -1801,7 +1801,7 @@ int BJComputeDirection(double theVector[3]) {
 	if (viewAxis < 0) {
 		return -1;
 	}
-	return [self getSlice:viewAxis];
+	return [self getSlice:(int)viewAxis];
 }
 
 - (int)getSlice:(int)axis {

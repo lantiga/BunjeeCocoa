@@ -7,14 +7,15 @@
 
 #import "BJSceneViewPanelController.h"
 #import "BJCaseBrowserController.h"
-#import "BJWorkspace.h"
+#import "Bunjee/BJWorkspace.h"
 #import "BJSceneViewPanel.h"
-#import "BJScene.h"
+#import "Bunjee/BJScene.h"
+#import "Bunjee/VTKSceneView.h"
 
 @implementation BJSceneViewPanelController
 
 @synthesize synchronized;
-@synthesize scene;
+//@synthesize scene;
 @synthesize sceneView;
 @synthesize sceneViewPanel;
 @synthesize workspace;
@@ -22,7 +23,7 @@
 @synthesize syncCamera;
 
 - (id)init {
-	self = [self initWithNibName:@"SceneView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"SceneView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 
@@ -66,7 +67,7 @@
 	[self updateSceneChoice];
 }
 
-- (void)setWorkspace:(BJWorkspace *)theWorkspace {
+- (void)setWorkspace:(BJWorkspace*)theWorkspace {
 	workspace = theWorkspace;
 	[self updateSceneChoice];
 }

@@ -60,12 +60,12 @@
 							<object class="NSPopUpButton" id="579048278">
 								<reference key="NSNextResponder" ref="330301791"/>
 								<int key="NSvFlags">268</int>
-								<string key="NSFrame">{{6, 15}, {110, 25}}</string>
+								<string key="NSFrame">{{6, 19}, {110, 17}}</string>
 								<reference key="NSSuperview" ref="330301791"/>
 								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSPopUpButtonCell" key="NSCell" id="955849210">
-									<int key="NSCellFlags">-2076049856</int>
+									<int key="NSCellFlags">-2080244160</int>
 									<int key="NSCellFlags2">134481920</int>
 									<object class="NSFont" key="NSSupport" id="22">
 										<string key="NSName">LucidaGrande</string>
@@ -140,7 +140,7 @@
 							<object class="NSButton" id="424415964">
 								<reference key="NSNextResponder" ref="330301791"/>
 								<int key="NSvFlags">265</int>
-								<string key="NSFrame">{{449, 15}, {50, 25}}</string>
+								<string key="NSFrame">{{449, 19}, {50, 17}}</string>
 								<reference key="NSSuperview" ref="330301791"/>
 								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
@@ -150,7 +150,7 @@
 									<string key="NSContents">3D</string>
 									<reference key="NSSupport" ref="22"/>
 									<reference key="NSControlView" ref="424415964"/>
-									<int key="NSButtonFlags">-1232715521</int>
+									<int key="NSButtonFlags">914768127</int>
 									<int key="NSButtonFlags2">163</int>
 									<object class="NSFont" key="NSAlternateImage" id="829148204">
 										<string key="NSName">LucidaGrande</string>
@@ -166,7 +166,7 @@
 							<object class="NSButton" id="937229800">
 								<reference key="NSNextResponder" ref="330301791"/>
 								<int key="NSvFlags">265</int>
-								<string key="NSFrame">{{504, 15}, {50, 25}}</string>
+								<string key="NSFrame">{{504, 19}, {50, 17}}</string>
 								<reference key="NSSuperview" ref="330301791"/>
 								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
@@ -176,7 +176,7 @@
 									<string key="NSContents">Sync</string>
 									<reference key="NSSupport" ref="22"/>
 									<reference key="NSControlView" ref="937229800"/>
-									<int key="NSButtonFlags">-1232715521</int>
+									<int key="NSButtonFlags">914768127</int>
 									<int key="NSButtonFlags2">163</int>
 									<reference key="NSAlternateImage" ref="829148204"/>
 									<string key="NSAlternateContents"/>
@@ -188,7 +188,7 @@
 							<object class="NSButton" id="44906679">
 								<reference key="NSNextResponder" ref="330301791"/>
 								<int key="NSvFlags">-2147483380</int>
-								<string key="NSFrame">{{122, 15}, {50, 25}}</string>
+								<string key="NSFrame">{{122, 19}, {50, 17}}</string>
 								<reference key="NSSuperview" ref="330301791"/>
 								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
@@ -198,7 +198,7 @@
 									<string key="NSContents">MIP</string>
 									<reference key="NSSupport" ref="22"/>
 									<reference key="NSControlView" ref="44906679"/>
-									<int key="NSButtonFlags">-1232715521</int>
+									<int key="NSButtonFlags">-2038021889</int>
 									<int key="NSButtonFlags2">163</int>
 									<reference key="NSAlternateImage" ref="829148204"/>
 									<string key="NSAlternateContents"/>
@@ -210,7 +210,7 @@
 							<object class="NSButton" id="581663647">
 								<reference key="NSNextResponder" ref="330301791"/>
 								<int key="NSvFlags">265</int>
-								<string key="NSFrame">{{394, 15}, {50, 25}}</string>
+								<string key="NSFrame">{{394, 19}, {50, 17}}</string>
 								<reference key="NSSuperview" ref="330301791"/>
 								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
@@ -255,7 +255,7 @@
 							<object class="NSSegmentedControl" id="51747326">
 								<reference key="NSNextResponder" ref="330301791"/>
 								<int key="NSvFlags">269</int>
-								<string key="NSFrame">{{177, 19}, {196, 17}}</string>
+								<string key="NSFrame">{{180, 20}, {200, 15}}</string>
 								<reference key="NSSuperview" ref="330301791"/>
 								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
@@ -288,7 +288,7 @@
 											<int key="NSSegmentItemImageScaling">0</int>
 										</object>
 									</array>
-									<int key="NSSegmentStyle">2</int>
+									<int key="NSSegmentStyle">1</int>
 								</object>
 							</object>
 						</array>
@@ -489,12 +489,12 @@
 						<reference key="object" ref="330301791"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="173899960"/>
-							<reference ref="51747326"/>
 							<reference ref="937229800"/>
 							<reference ref="44906679"/>
 							<reference ref="579048278"/>
 							<reference ref="581663647"/>
 							<reference ref="424415964"/>
+							<reference ref="51747326"/>
 						</array>
 						<reference key="parent" ref="1056246305"/>
 					</object>

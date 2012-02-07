@@ -7,11 +7,11 @@
 
 #import "BJCaseBrowserController.h"
 #import "BJWorkspaceController.h"
-#import "BJWorkspace.h"
-#import "BJCase.h"
-#import "BJData.h"
-#import "BJScene.h"
-#import "BJDataDisplay.h"
+#import "Bunjee/BJWorkspace.h"
+#import "Bunjee/BJCase.h"
+#import "Bunjee/BJData.h"
+#import "Bunjee/BJScene.h"
+#import "Bunjee/BJDataDisplay.h"
 
 @implementation BJCaseBrowserController
 
@@ -23,7 +23,7 @@
 @synthesize smallFont;
 
 - (id)init {
-	self = [self initWithNibName:@"CaseBrowserView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"CaseBrowserView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 

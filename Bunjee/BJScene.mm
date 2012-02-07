@@ -155,7 +155,7 @@ NSInteger sortDataDisplay(id data1, id data2, void *context) {
 	if (group != nil) {
 		[propertyDict setObject:group forKey:@"Group"];
 	}
-	[propertyDict setObject:[NSNumber numberWithInt:[displayEditorPropertyList count]] forKey:@"Id"];
+	[propertyDict setObject:[NSNumber numberWithInteger:[displayEditorPropertyList count]] forKey:@"Id"];
 	[propertyDict addEntriesFromDictionary:attributes];
 	[displayEditorPropertyList setObject:propertyDict forKey:theName];
 }

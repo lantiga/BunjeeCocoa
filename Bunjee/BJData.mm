@@ -142,7 +142,7 @@ public:
 	if (group != nil) {
 		[propertyDict setObject:group forKey:@"Group"];
 	}
-	[propertyDict setObject:[NSNumber numberWithInt:[infoPropertyList count]] forKey:@"Id"];
+	[propertyDict setObject:[NSNumber numberWithInteger:[infoPropertyList count]] forKey:@"Id"];
 	[propertyDict addEntriesFromDictionary:attributes];
 	[infoPropertyList setObject:propertyDict forKey:name];	
 }
@@ -200,7 +200,7 @@ public:
 	}
 	vtkUpdateOnModifiedCallback *updateOnModifiedCallback = vtkUpdateOnModifiedCallback::New();
 	updateOnModifiedCallback->Data = self;
-	updateOnModifiedEventTag = object->AddObserver(vtkCommand::ModifiedEvent,updateOnModifiedCallback);
+	updateOnModifiedEventTag = (int)object->AddObserver(vtkCommand::ModifiedEvent,updateOnModifiedCallback);
 	observedObject = object;
 	updateOnModifiedCallback->Delete();
 }
@@ -698,7 +698,7 @@ public:
 }
 
 - (void)setMaximumNumberOfSeeds:(NSInteger)numberOfSeeds {
-	[dataPropertyList setObject:[NSNumber numberWithInt:numberOfSeeds] forKey:@"MaximumNumberOfSeeds"];
+	[dataPropertyList setObject:[NSNumber numberWithInteger:numberOfSeeds] forKey:@"MaximumNumberOfSeeds"];
 }
 
 - (NSInteger)maximumNumberOfSeeds {
@@ -872,7 +872,7 @@ public:
 	
 	vtkCellArray* cellArray = polyData->GetLines();
 	cellArray->Initialize();
-	cellArray->InsertNextCell(numberOfPoints);
+	cellArray->InsertNextCell((int)numberOfPoints);
 	for (int i=0; i<numberOfPoints; i++) {
 		cellArray->InsertCellPoint(i);
 	}
@@ -891,7 +891,7 @@ public:
 
 	vtkCellArray* cellArray = polyData->GetLines();
 	cellArray->Initialize();
-	cellArray->InsertNextCell(numberOfPoints-1);
+	cellArray->InsertNextCell((int)numberOfPoints-1);
 	for (int i=0; i<numberOfPoints-1; i++) {
 		cellArray->InsertCellPoint(i);
 	}	
@@ -910,7 +910,7 @@ public:
 }
 
 - (void)removeLastPoint {
-	[self removePoint:[self numberOfPoints]-1];
+	[self removePoint:(int)[self numberOfPoints]-1];
 }
 
 - (void)removeAllPoints {

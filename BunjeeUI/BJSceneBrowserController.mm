@@ -6,11 +6,11 @@
 //
 
 #import "BJSceneBrowserController.h"
-#import "BJWorkspaceController.h"
-#import "BJWorkspace.h"
-#import "BJScene.h"
-#import "BJData.h"
-#import "BJDataDisplay.h"
+#import "Bunjee/BJWorkspaceController.h"
+#import "Bunjee/BJWorkspace.h"
+#import "Bunjee/BJScene.h"
+#import "Bunjee/BJData.h"
+#import "Bunjee/BJDataDisplay.h"
 
 //#define SINGLE_LINE_OUTLINEVIEW
 
@@ -75,7 +75,7 @@
 @synthesize shouldSaveSceneAsTemplate;
 
 - (id)init {
-	self = [self initWithNibName:@"SceneBrowserView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"SceneBrowserView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 

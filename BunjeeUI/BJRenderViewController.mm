@@ -6,13 +6,14 @@
 //  Copyright 2011 Orobix Srl. All rights reserved.
 //
 
-#import "BJWorkspace.h"
-#import "BJScene.h"
-#import "BJData.h"
-#import "BJDataDisplay.h"
+#import "Bunjee/BJWorkspace.h"
+#import "Bunjee/BJScene.h"
+#import "Bunjee/BJData.h"
+#import "Bunjee/BJDataDisplay.h"
 #import "BJRenderViewController.h"
+#import "BJSceneViewPanel.h"
 #import "BJSceneViewPanelController.h"
-#import "VTKSceneView.h"
+#import "Bunjee/VTKSceneView.h"
 
 @implementation BJRenderView
 //- (void)drawRect:(NSRect)rect {
@@ -26,7 +27,7 @@
 - (void)flagsChanged:(NSEvent *)theEvent {
 	int modifier = 0;
 	
-	int shiftDown = ([theEvent modifierFlags] & NSShiftKeyMask) ? 1 : 0;
+//	int shiftDown = ([theEvent modifierFlags] & NSShiftKeyMask) ? 1 : 0;
 	int controlDown = ([theEvent modifierFlags] & NSControlKeyMask) ? 1 : 0;
 	int commandDown = ([theEvent modifierFlags] & NSCommandKeyMask) ? 1 : 0;
 	int optionDown = ([theEvent modifierFlags] & NSAlternateKeyMask) ? 1 : 0;
@@ -61,7 +62,7 @@
 @synthesize invocations;
 
 - (id)init {
-	self = [self initWithNibName:@"RenderView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"RenderView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 
@@ -169,7 +170,7 @@
 
 - (void)activeToolShouldChange:(NSNotification*)notification {
 	int modifier = [[[notification userInfo] objectForKey:@"Modifier"] intValue];
-	int newToolId = toolId;
+	NSInteger newToolId = toolId;
 	if (modifier == 0) {
 		//		if (toolId == SL || toolId == WL) {
 		//			newToolId = CH;
@@ -340,7 +341,7 @@
 	for (unsigned int i=0; i<rows; i++) {
 		for (unsigned int j=0; j<columns; j++) {
 			NSUInteger viewIndex = i*columns + j;
-			id sceneViewPanel = [sceneViewPanels objectAtIndex:viewIndex];
+			BJSceneViewPanel* sceneViewPanel = [sceneViewPanels objectAtIndex:viewIndex];
 			NSPoint origin;
 			origin.x = j * (subviewFrame.size.width + 0);
 			origin.y = i * (subviewFrame.size.height + 0);
@@ -433,7 +434,7 @@
 		lastNonModifierToolId = toolId;
 	}
 //	NSLog(@"Tool id %d",toolId);
-	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:toolId], @"ToolId", nil];
+	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:toolId], @"ToolId", nil];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"ToolIdChanged" object:self userInfo:userInfo];
 }
 

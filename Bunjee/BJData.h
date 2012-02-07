@@ -7,6 +7,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+//
 class vtkImageData;
 class vtkPolyData;
 class vtkObject;

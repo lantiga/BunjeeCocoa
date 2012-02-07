@@ -7,11 +7,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "VTKSceneView.h"
-
 @class BJScene;
 @class BJSceneViewPanel;
 @class BJWorkspace;
+@class VTKSceneView;
 
 @interface BJSceneViewPanelController : NSViewController {
 	IBOutlet BJSceneViewPanel *sceneViewPanel;
@@ -28,18 +27,22 @@
 	BOOL show3D;
 }
 
-@property(readwrite,retain) BJScene* scene;
-@property(readwrite,retain) BJWorkspace* workspace;
+//@property(readwrite,retain) BJScene* scene;
+@property(readonly) BJWorkspace* workspace;
 @property(readwrite) BOOL synchronized;
-@property(readwrite) BOOL syncCamera;
+@property(readonly) BOOL syncCamera;
 @property(readwrite) BOOL mipEnabled;
 @property(readwrite) BOOL show3D;
 @property(readonly) BJSceneViewPanel* sceneViewPanel;
 @property(readonly) VTKSceneView* sceneView;
 @property(readonly) NSString* sceneName;
 
+- (void)setWorkspace:(BJWorkspace*)theWorkspace;
+
 - (void)setScene:(BJScene*)theScene;
 - (BJScene*)scene;
+
+- (void)setSyncCamera:(BOOL)sync;
 
 - (void)updateSceneChoice;
 

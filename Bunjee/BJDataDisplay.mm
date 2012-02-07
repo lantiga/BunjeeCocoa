@@ -80,7 +80,7 @@
 }
 
 - (id)initWithDataObject:(BJData*)theDataObject {
-	[self initWithDataObjectUniqueIdentifier:[theDataObject uniqueIdentifier]];
+	self = [self initWithDataObjectUniqueIdentifier:[theDataObject uniqueIdentifier]];
 	if (self) {
 		[self bindToDataObject:theDataObject];
 	}
@@ -215,7 +215,7 @@
 	if (group != nil) {
 		[propertyDict setObject:group forKey:@"Group"];
 	}
-	[propertyDict setObject:[NSNumber numberWithInt:[displayEditorPropertyList count]] forKey:@"Id"];
+	[propertyDict setObject:[NSNumber numberWithInteger:(NSUInteger)[displayEditorPropertyList count]] forKey:@"Id"];
 	[propertyDict addEntriesFromDictionary:attributes];
 	[displayEditorPropertyList setObject:propertyDict forKey:name];
 }
@@ -477,12 +477,12 @@
 		polyDataActor = vtkActor::New();
 		//[displayPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"ScalarVisibility"];
 		[displayPropertyList setObject:@"" forKey:@"ScalarArray"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"Opacity"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"Opacity"];
 		[displayPropertyList setObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithDeviceRed:1.0 green:1.0 blue:1.0 alpha:1.0]] forKey:@"Color"];
 		//[self addEditorPropertyWithName:@"ScalarVisibility" type:@"boolean" label:@"Scalar Visibility" group:@"Color"];
 		[self addEditorPropertyWithName:@"ScalarArray" type:@"dataarray" label:@"Array" group:@"Appearance"];
 		[self addEditorPropertyWithName:@"Opacity" type:@"float" label:@"Opacity" group:@"Appearance" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																											   [NSNumber numberWithFloat:0.0],@"MinValue",[NSNumber numberWithFloat:1.0],@"MaxValue",nil]];
+																											   [NSNumber numberWithDouble:0.0],@"MinValue",[NSNumber numberWithDouble:1.0],@"MaxValue",nil]];
 		[self addEditorPropertyWithName:@"Color" type:@"color" label:@"Color" group:@"Appearance"];
 	}
 	return self;
@@ -700,12 +700,12 @@
 		[displayPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"ThreeD"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"LabelsVisibility"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"GlyphVisibility"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"GlyphScale"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"GlyphScale"];
 		[displayPropertyList setObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithDeviceRed:1.0 green:0.0 blue:0.0 alpha:1.0]] forKey:@"Color"];
 		[self addEditorPropertyWithName:@"LabelsVisibility" type:@"boolean" label:@"Visible" group:@"Labels"];
 		[self addEditorPropertyWithName:@"GlyphVisibility" type:@"boolean" label:@"Visible" group:@"Glyphs"];
 		[self addEditorPropertyWithName:@"GlyphScale" type:@"float" label:@"Scale" group:@"Glyphs" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																											   [NSNumber numberWithFloat:0.0],@"MinValue",nil]];
+																											   [NSNumber numberWithDouble:0.0],@"MinValue",nil]];
 	}
 	return self;
 }
@@ -842,7 +842,7 @@
 		[displayPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"ThreeD"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"LabelVisibility"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"GlyphVisibility"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"GlyphOpacity"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"GlyphOpacity"];
 		[displayPropertyList setObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithDeviceRed:1.0 green:0.8 blue:0.8 alpha:1.0]] forKey:@"Color"];
 		[displayPropertyList setObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithDeviceRed:1.0 green:0.0 blue:0.0 alpha:1.0]] forKey:@"GlyphsColor"];
 		[self addEditorPropertyWithName:@"LabelVisibility" type:@"boolean" label:@"Visible" group:@"Label"];
@@ -900,7 +900,7 @@
 	}
 	
 	double textPosition[3];
-	int numberOfPoints = [[self tubeDataObject] polyData]->GetNumberOfPoints();
+	vtkIdType numberOfPoints = [[self tubeDataObject] polyData]->GetNumberOfPoints();
 	if (numberOfPoints == 0) {
 		[super update];
 		return;
@@ -1006,7 +1006,7 @@
 	if (self) {
 		tubeActor = vtkActor::New();
 		[displayPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"TubeVisibility"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"TubeOpacity"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"TubeOpacity"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"TubeScalarVisibility"];
 //		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"LabelsVisibility"];
 //		[displayPropertyList setObject:@"" forKey:@"LabelsArray"];
@@ -1014,7 +1014,7 @@
 		[self addEditorPropertyWithName:@"TubeVisibility" type:@"boolean" label:@"Visible" group:@"Tubes"];
 		[self addEditorPropertyWithName:@"TubeScalarVisibility" type:@"boolean" label:@"Scalars" group:@"Tubes"];
 		[self addEditorPropertyWithName:@"TubeOpacity" type:@"float" label:@"Opacity" group:@"Tubes" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																												  [NSNumber numberWithFloat:0.0],@"MinValue",[NSNumber numberWithFloat:1.0],@"MaxValue",nil]];
+																												  [NSNumber numberWithDouble:0.0],@"MinValue",[NSNumber numberWithDouble:1.0],@"MaxValue",nil]];
 //		[self addEditorPropertyWithName:@"LabelsVisibility" type:@"boolean" label:@"Visible" group:@"Labels"];
 //		[self addEditorPropertyWithName:@"LabelsArray" type:@"cellarray" label:@"Array" group:@"Labels"];
 	}
@@ -1024,7 +1024,7 @@
 - (void)bindToDataObject:(BJCenterlineData*)theDataObject {
 	[super bindToDataObject:theDataObject];
 
-	polyDataActor->GetProperty()->SetLineWidth(2.0);
+	polyDataActor->GetProperty()->SetLineWidth(2.0f);
 	
 	vtkPolyData* centerlines = vtkPolyData::New();
 	centerlines->ShallowCopy([theDataObject polyData]);
@@ -1174,19 +1174,19 @@
 		edgeActor = vtkActor::New();
 
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"VectorsVisibility"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"VectorsScale"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"VectorsScale"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"PlaneVisibility"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"PlaneScale"];
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"PlaneOpacity"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"PlaneScale"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"PlaneOpacity"];
 
 		[self addEditorPropertyWithName:@"VectorsVisibility" type:@"boolean" label:@"Reference System Vectors" group:@"Geometry"];
 		[self addEditorPropertyWithName:@"VectorsScale" type:@"float" label:@"Scale" group:@"Vectors" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																											   [NSNumber numberWithFloat:0.0],@"MinValue",nil]];
+																											   [NSNumber numberWithDouble:0.0],@"MinValue",nil]];
 		[self addEditorPropertyWithName:@"PlaneVisibility" type:@"boolean" label:@"Bifurcation Plane" group:@"Geometry"];
 		[self addEditorPropertyWithName:@"PlaneScale" type:@"float" label:@"Scale" group:@"Plane" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																											  [NSNumber numberWithFloat:0.0],@"MinValue",nil]];
+																											  [NSNumber numberWithDouble:0.0],@"MinValue",nil]];
 		[self addEditorPropertyWithName:@"PlaneOpacity" type:@"float" label:@"Opacity" group:@"Plane" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																												  [NSNumber numberWithFloat:0.0],@"MinValue",[NSNumber numberWithFloat:1.0],@"MaxValue",nil]];
+																												  [NSNumber numberWithDouble:0.0],@"MinValue",[NSNumber numberWithDouble:1.0],@"MaxValue",nil]];
 	}
 	return self;
 }
@@ -1338,7 +1338,7 @@
 	edgeMapper->SetInput(stripper->GetOutput());
 	
 	edgeActor->SetMapper(edgeMapper);
-	edgeActor->GetProperty()->SetLineWidth(2.0);
+	edgeActor->GetProperty()->SetLineWidth(2.0f);
 	edgeActor->GetProperty()->SetColor(0.0,0.0,0.0);
 	
 	edges->Delete();
@@ -1378,14 +1378,14 @@
 - (id)initWithDataObjectUniqueIdentifier:(NSString*)uniqueIdentifier{
 	self = [super initWithDataObjectUniqueIdentifier:uniqueIdentifier];
 	if (self) {
-		[displayPropertyList setObject:[NSNumber numberWithFloat:1.0] forKey:@"GlyphScale"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"GlyphScale"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"AngleVisibility"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"PlanarityVisibility"];
 		[displayPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"VectorsVisibility"];
 		[displayPropertyList setObject:@"3D Vectors" forKey:@"Vectors"];
 
 		[self addEditorPropertyWithName:@"GlyphScale" type:@"float" label:@"Scale" group:@"Geometry" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																												 [NSNumber numberWithFloat:0.0],@"MinValue",nil]];
+																												 [NSNumber numberWithDouble:0.0],@"MinValue",nil]];
 		[self addEditorPropertyWithName:@"AngleVisibility" type:@"boolean" label:@"Angle" group:@"Geometry"];
 		[self addEditorPropertyWithName:@"PlanarityVisibility" type:@"boolean" label:@"Planarity" group:@"Geometry"];
 		[self addEditorPropertyWithName:@"VectorsVisibility" type:@"boolean" label:@"Vectors" group:@"Geometry"];
@@ -1526,7 +1526,7 @@
 	NSString* angleAnnotation = [NSString stringWithFormat:@"Bifurcation Angle: %.2f deg",angleValue];
 
 	double textPosition[3];
-	int numberOfPoints = arcSource->GetOutput()->GetNumberOfPoints();
+	vtkIdType numberOfPoints = arcSource->GetOutput()->GetNumberOfPoints();
 	arcSource->GetOutput()->GetPoint(numberOfPoints/2,textPosition);
 	angleTextActor->GetPositionCoordinate()->SetCoordinateSystemToWorld();
 	angleTextActor->GetPositionCoordinate()->SetValue(textPosition);

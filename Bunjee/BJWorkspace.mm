@@ -20,7 +20,7 @@
 - (id)init {
 	self = [super init];
 	if (self) {
-		srandom([[NSDate date] timeIntervalSince1970]);
+		srandom((int)[[NSDate date] timeIntervalSince1970]);
 		scenes = [[NSMutableDictionary alloc] init];
 		cases = [[NSMutableDictionary alloc] init];
 		activeSceneName = [NSString string];

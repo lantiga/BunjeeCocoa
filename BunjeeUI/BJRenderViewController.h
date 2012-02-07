@@ -42,15 +42,21 @@
 	NSMutableDictionary* invocations;
 }
 
-@property(readwrite,retain) BJWorkspace* workspace;
+@property(readonly) BJWorkspace* workspace;
 @property(readonly) NSMutableArray* sceneViewPanelControllers;
 
-@property(readwrite) NSInteger toolId;
-@property(readwrite) BOOL toolsEnabled;
+@property(readonly) NSInteger toolId;
+@property(readonly) BOOL toolsEnabled;
 @property(readwrite,copy) NSArray* layoutNames;
-@property(readwrite,copy) NSString* activeLayoutName;
+@property(readonly) NSString* activeLayoutName;
 @property(readwrite,copy) NSString* activeArrangementName;
 @property(readonly) NSMutableDictionary* invocations;
+
+- (void)setWorkspace:(BJWorkspace *)theWorkspace;
+
+- (void)setToolId:(NSInteger)theToolId;
+- (void)setToolsEnabled:(BOOL)enabled;
+- (void)setActiveLayoutName:(NSString *)name;
 
 - (BOOL)seedingEnabled;
 

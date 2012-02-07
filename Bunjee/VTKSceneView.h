@@ -72,11 +72,11 @@ enum {
 	
 }
 
-@property(readwrite,retain,setter=setScene:) BJScene* scene;
-@property(readwrite,setter=setMipEnabled:) BOOL mipEnabled;
+@property(readonly) BJScene* scene;
+@property(readonly) BOOL mipEnabled;
 @property(readwrite) BOOL seedingEnabled;
 @property(readwrite) BOOL crosshairEnabled;
-@property(readwrite) BOOL show3D;
+@property(readonly) BOOL show3D;
 @property(readwrite) BOOL syncCamera;
 @property(readwrite) NSInteger toolId;
 @property(readwrite) BOOL mouseTracking;
@@ -85,6 +85,10 @@ enum {
 @property(readonly) NSInteger viewAxis;
 @property(readwrite) BOOL cameraAnimation;
 @property(readwrite) BOOL copyingCamera;
+
+- (void)setScene:(BJScene*)theScene;
+- (void)setMipEnabled:(BOOL)mip;
+- (void)setShow3D:(BOOL)show;
 
 - (void)initializeSceneView;
 - (void)cleanUpSceneView;
@@ -102,7 +106,7 @@ enum {
 - (void)removeInvocation:(NSInvocation*)theInvocation forSignal:(NSString*)theSignal;
 - (NSSet*)invocationsForSignal:(NSString*)theSignal;
 
-- (void)setCrosshairAnnotationIJK:(int*)ijk XYZ:(double*)XYZ scalar:(double)scalar wl:(double)wl ww:(double)ww;
+- (void)setCrosshairAnnotationIJK:(NSInteger*)ijk XYZ:(double*)XYZ scalar:(double)scalar wl:(double)wl ww:(double)ww;
 - (void)resetCrosshairAnnotation;
 - (vtkCrosshairCallback*)crosshairCallback;
 

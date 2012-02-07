@@ -19,7 +19,7 @@
 @synthesize shouldSaveSceneAsTemplate;
 
 - (id)init {
-	self = [self initWithNibName:@"WorkspaceSaveSceneAsAccessoryView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"WorkspaceSaveSceneAsAccessoryView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 

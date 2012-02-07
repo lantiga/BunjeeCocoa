@@ -6,9 +6,9 @@
 //
 
 #import "BJCaseInfoController.h"
-#import "BJWorkspace.h"
-#import "BJCase.h"
-#import "BJData.h"
+#import "Bunjee/BJWorkspace.h"
+#import "Bunjee/BJCase.h"
+#import "Bunjee/BJData.h"
 
 @implementation BJCaseInfoController
 
@@ -16,7 +16,7 @@
 @synthesize caseName;
 
 - (id)init {
-	self = [self initWithNibName:@"CaseInfoView" bundle:[NSBundle bundleWithIdentifier:@"com.orobix.BunjeeKit"]];
+	self = [self initWithNibName:@"CaseInfoView" bundle:[NSBundle bundleWithIdentifier:@"orobix.BunjeeUI"]];
 	return self;
 }
 
