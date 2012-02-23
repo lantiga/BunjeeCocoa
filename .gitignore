@@ -9,7 +9,7 @@ build/*
 project.xcworkspace/
 xcuserdata/
 
-vmtk/Install
+ExternalLibraries/vmtk
 
 # Textmate - if you build your xcode projects with it
 *.tm_build_errors
