@@ -637,29 +637,11 @@
 		81200BFF14DBF585003EF101 /* Bunjee */ = {
 			isa = PBXGroup;
 			children = (
+				81F360DF14FBB77500089738 /* Core */,
+				81F360E314FBB7BF00089738 /* Controllers */,
+				81F360E114FBB78D00089738 /* Logic */,
+				81F360E214FBB7A100089738 /* Rendering */,
 				81200C7B14DBF7C0003EF101 /* Todo.md */,
-				81200C5114DBF70C003EF101 /* BJCase.h */,
-				81200C5214DBF70C003EF101 /* BJCase.mm */,
-				81200C5314DBF70C003EF101 /* BJController.h */,
-				81200C5414DBF70C003EF101 /* BJController.mm */,
-				81200C5514DBF70C003EF101 /* BJData.h */,
-				81200C5614DBF70C003EF101 /* BJData.mm */,
-				81200C5714DBF70C003EF101 /* BJDataDisplay.h */,
-				81200C5814DBF70C003EF101 /* BJDataDisplay.mm */,
-				81200C5914DBF70C003EF101 /* BJOperation.h */,
-				81200C5A14DBF70C003EF101 /* BJOperation.m */,
-				81200C5B14DBF70C003EF101 /* BJScene.h */,
-				81200C5C14DBF70C003EF101 /* BJScene.mm */,
-				81200C5D14DBF70C003EF101 /* BJWorkspace.h */,
-				81200C5E14DBF70C003EF101 /* BJWorkspace.mm */,
-				81200C5F14DBF70C003EF101 /* BJWorkspaceController.h */,
-				81200C6014DBF70C003EF101 /* BJWorkspaceController.mm */,
-				81200C6114DBF70C003EF101 /* vtkBJImagePlaneWidget.h */,
-				81C36A5714E0828000934F9D /* vtkBJImagePlaneWidget.cxx */,
-				81200C6214DBF70C003EF101 /* VTKSceneView.h */,
-				81200C6314DBF70C003EF101 /* VTKSceneView.mm */,
-				81200C6414DBF70C003EF101 /* VTKView.h */,
-				81200C6514DBF70C003EF101 /* VTKView.mm */,
 				81200C0614DBF585003EF101 /* Bunjee.h */,
 				81200C0714DBF585003EF101 /* Bunjee.m */,
 				81200C7F14DBF97C003EF101 /* Resources */,
@@ -700,24 +682,8 @@
 		81200C2D14DBF5E3003EF101 /* BunjeeUI */ = {
 			isa = PBXGroup;
 			children = (
-				81200C8014DBFA2C003EF101 /* BJCaseBrowserController.h */,
-				81200C8114DBFA2C003EF101 /* BJCaseBrowserController.mm */,
-				81200C8214DBFA2C003EF101 /* BJCaseDBController.h */,
-				81200C8314DBFA2C003EF101 /* BJCaseDBController.m */,
-				81200C8414DBFA2C003EF101 /* BJCaseInfoController.h */,
-				81200C8514DBFA2C003EF101 /* BJCaseInfoController.mm */,
-				81200C8614DBFA2C003EF101 /* BJConsoleController.h */,
-				81200C8714DBFA2C003EF101 /* BJConsoleController.mm */,
-				81200C8814DBFA2C003EF101 /* BJDisplayEditorController.h */,
-				81200C8914DBFA2C003EF101 /* BJDisplayEditorController.mm */,
-				81200C8A14DBFA2C003EF101 /* BJRenderViewController.h */,
-				81200C8B14DBFA2C003EF101 /* BJRenderViewController.mm */,
-				81200C8C14DBFA2C003EF101 /* BJSceneBrowserController.h */,
-				81200C8D14DBFA2C003EF101 /* BJSceneBrowserController.mm */,
-				81200C8E14DBFA2C003EF101 /* BJSceneViewPanel.h */,
-				81200C8F14DBFA2C003EF101 /* BJSceneViewPanel.mm */,
-				81200C9014DBFA2C003EF101 /* BJSceneViewPanelController.h */,
-				81200C9114DBFA2C003EF101 /* BJSceneViewPanelController.mm */,
+				81F360E414FBB80A00089738 /* Controllers */,
+				81F360E514FBB86800089738 /* UI */,
 				81200C3414DBF5E3003EF101 /* BunjeeUI.h */,
 				81200C3514DBF5E3003EF101 /* BunjeeUI.m */,
 				81200CB614DBFA61003EF101 /* Resources */,
@@ -863,6 +829,88 @@
 				81C3697414E07B2300934F9D /* vmtk */,
 			);
 			name = ExternalLibraries;
+			sourceTree = "<group>";
+		};
+		81F360DF14FBB77500089738 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				81200C5D14DBF70C003EF101 /* BJWorkspace.h */,
+				81200C5E14DBF70C003EF101 /* BJWorkspace.mm */,
+				81200C5114DBF70C003EF101 /* BJCase.h */,
+				81200C5214DBF70C003EF101 /* BJCase.mm */,
+				81200C5B14DBF70C003EF101 /* BJScene.h */,
+				81200C5C14DBF70C003EF101 /* BJScene.mm */,
+				81200C5514DBF70C003EF101 /* BJData.h */,
+				81200C5614DBF70C003EF101 /* BJData.mm */,
+				81200C5714DBF70C003EF101 /* BJDataDisplay.h */,
+				81200C5814DBF70C003EF101 /* BJDataDisplay.mm */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		81F360E114FBB78D00089738 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				81200C5914DBF70C003EF101 /* BJOperation.h */,
+				81200C5A14DBF70C003EF101 /* BJOperation.m */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		81F360E214FBB7A100089738 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				81200C6114DBF70C003EF101 /* vtkBJImagePlaneWidget.h */,
+				81C36A5714E0828000934F9D /* vtkBJImagePlaneWidget.cxx */,
+				81200C6214DBF70C003EF101 /* VTKSceneView.h */,
+				81200C6314DBF70C003EF101 /* VTKSceneView.mm */,
+				81200C6414DBF70C003EF101 /* VTKView.h */,
+				81200C6514DBF70C003EF101 /* VTKView.mm */,
+			);
+			name = Rendering;
+			sourceTree = "<group>";
+		};
+		81F360E314FBB7BF00089738 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81200C5F14DBF70C003EF101 /* BJWorkspaceController.h */,
+				81200C6014DBF70C003EF101 /* BJWorkspaceController.mm */,
+				81200C5314DBF70C003EF101 /* BJController.h */,
+				81200C5414DBF70C003EF101 /* BJController.mm */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		81F360E414FBB80A00089738 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81200C8014DBFA2C003EF101 /* BJCaseBrowserController.h */,
+				81200C8114DBFA2C003EF101 /* BJCaseBrowserController.mm */,
+				81200C8214DBFA2C003EF101 /* BJCaseDBController.h */,
+				81200C8314DBFA2C003EF101 /* BJCaseDBController.m */,
+				81200C8414DBFA2C003EF101 /* BJCaseInfoController.h */,
+				81200C8514DBFA2C003EF101 /* BJCaseInfoController.mm */,
+				81200C8614DBFA2C003EF101 /* BJConsoleController.h */,
+				81200C8714DBFA2C003EF101 /* BJConsoleController.mm */,
+				81200C8814DBFA2C003EF101 /* BJDisplayEditorController.h */,
+				81200C8914DBFA2C003EF101 /* BJDisplayEditorController.mm */,
+				81200C8A14DBFA2C003EF101 /* BJRenderViewController.h */,
+				81200C8B14DBFA2C003EF101 /* BJRenderViewController.mm */,
+				81200C8C14DBFA2C003EF101 /* BJSceneBrowserController.h */,
+				81200C8D14DBFA2C003EF101 /* BJSceneBrowserController.mm */,
+				81200C9014DBFA2C003EF101 /* BJSceneViewPanelController.h */,
+				81200C9114DBFA2C003EF101 /* BJSceneViewPanelController.mm */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		81F360E514FBB86800089738 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				81200C8E14DBFA2C003EF101 /* BJSceneViewPanel.h */,
+				81200C8F14DBFA2C003EF101 /* BJSceneViewPanel.mm */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
