@@ -9,7 +9,7 @@
 
 @class BJWorkspace;
 
-@interface BJCaseInfoController : NSViewController {
+@interface BJCaseInfoController : NSViewController<NSTableViewDataSource> {
 	IBOutlet NSTableView* caseInfoView;
 	NSMutableArray* caseInfoTableData;
 	IBOutlet NSPathControl* pathControl;

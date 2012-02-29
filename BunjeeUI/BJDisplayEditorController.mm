@@ -178,8 +178,7 @@
 	textRect.origin.x = columnWidth;
 	textRect.size.width = columnWidth - 15;
 	NSTextField* textField = [[NSTextField alloc] initWithFrame:textRect];
-    //XCode4
-	//[textField setDelegate:self];
+	[textField setDelegate:self];
 	[textField setTarget:self];
 	[textField setAction:@selector(controlValueChanged:)];
 	[[textField cell] setControlSize:NSSmallControlSize];
@@ -254,8 +253,7 @@
 
 	textRect.origin.x = columnWidth;
 	NSTextField* textField = [[NSTextField alloc] initWithFrame:textRect];
-    //XCode4
-	//[textField setDelegate:self];
+	[textField setDelegate:self];
 	[textField setTarget:self];
 	[textField setAction:@selector(controlValueChanged:)];
 	[[textField cell] setControlSize:NSSmallControlSize];

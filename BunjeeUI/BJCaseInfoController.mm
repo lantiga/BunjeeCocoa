@@ -31,8 +31,7 @@
 }
 
 - (void)awakeFromNib {
-    //XCode4
-	//[caseInfoView setDataSource:self];
+	[caseInfoView setDataSource:self];
 }
 
 - (void)finalize {

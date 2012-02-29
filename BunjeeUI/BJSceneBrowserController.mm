@@ -115,8 +115,7 @@
 }
 
 - (void)awakeFromNib {
-    //XCode4
-	//[sceneOutlineView setDataSource:self];
+	[sceneOutlineView setDataSource:self];
 	[sceneOutlineView registerForDraggedTypes:[NSArray arrayWithObject:NSStringPboardType]];
 	[sceneOutlineView setDoubleAction:@selector(toggleDisplayed:)];
 	[sceneOutlineView setTarget:self];

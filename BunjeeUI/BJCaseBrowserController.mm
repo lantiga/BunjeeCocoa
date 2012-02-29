@@ -50,8 +50,7 @@
 }
 
 - (void)awakeFromNib {
-    //XCode4
-//	[caseBrowserView setDelegate:self];
+	[caseBrowserView setDelegate:self];
 }
 
 - (void)setWorkspaceController:(BJWorkspaceController *) theWorkspaceController {

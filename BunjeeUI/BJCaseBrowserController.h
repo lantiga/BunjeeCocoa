@@ -10,7 +10,7 @@
 @class BJWorkspace;
 @class BJWorkspaceController;
 
-@interface BJCaseBrowserController : NSViewController {
+@interface BJCaseBrowserController : NSViewController<NSBrowserDelegate> {
 	IBOutlet NSBrowser* caseBrowserView;
 	IBOutlet NSView* caseBrowserPanel;
 	BJWorkspace* workspace;

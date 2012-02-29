@@ -22,7 +22,7 @@
 
 @end 
 
-@interface BJDisplayEditorController : NSViewController {
+@interface BJDisplayEditorController : NSViewController<NSTextFieldDelegate> {
 	id targetObject;
 	NSString* targetTitle;
 	NSString* targetSubtitle;

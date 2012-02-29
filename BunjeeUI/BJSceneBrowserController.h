@@ -23,7 +23,7 @@
 
 @end
 
-@interface BJSceneBrowserController : NSViewController {
+@interface BJSceneBrowserController : NSViewController<NSOutlineViewDataSource> {
 	IBOutlet BJSceneBrowserView* sceneOutlineView;
 	IBOutlet NSPopUpButton *sceneFilterButton;
 	IBOutlet NSPopUpButton *dataTypeFilterButton;
