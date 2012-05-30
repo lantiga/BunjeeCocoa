@@ -64,6 +64,11 @@ class vtkDoubleArray;
 - (void)setCurrentTime:(double)currentTime;
 - (double)minTime;
 - (double)maxTime;
+- (NSInteger)currentCycle;
+- (void)setCurrentCycle:(NSInteger)currentCycle;
+- (double)timeMin;
+- (double)timeMax;
+- (void)setTimeMin:(double)min max:(double)max;
 - (NSString*)dataFileExtension;
 
 - (NSString*)generateUniqueIdentifier;
@@ -141,7 +146,9 @@ class vtkDoubleArray;
 - (void)generateSpline:(vtkPolyData*)polyData;
 
 - (void)addPoint:(double*)point;
+- (void)addPoint:(double*)point atId:(int)pointId;
 - (void)addPoint:(double*)point withRadius:(double)radius;
+- (void)addPoint:(double*)point withRadius:(double)radius atId:(int)pointId;
 
 - (void)removePoint:(int)pointId;
 - (void)removeLastPoint;

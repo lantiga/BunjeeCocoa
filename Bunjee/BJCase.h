@@ -104,6 +104,8 @@
 - (id)createDisplayObjectForName:(NSString*)theName;
 
 - (void)setCurrentTime:(double)theTime;
+- (void)setCurrentTime:(double)theTime cycle:(NSInteger)theCycle;
+- (void)setTimeMin:(double)timeMin max:(double)timeMax;
 - (void)timeMin:(double*)minTime max:(double*)maxTime;
 
 @end

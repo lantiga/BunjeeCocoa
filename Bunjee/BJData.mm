@@ -69,6 +69,9 @@ public:
 		[dataPropertyList setObject:[NSNumber numberWithBool:YES] forKey:@"Stored"];
 		[dataPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"TimeDependent"];
 		[dataPropertyList setObject:[NSNumber numberWithDouble:0.0] forKey:@"CurrentTime"];
+		[dataPropertyList setObject:[NSNumber numberWithInteger:0] forKey:@"CurrentCycle"];
+		[dataPropertyList setObject:[NSNumber numberWithInteger:0.0] forKey:@"TimeMin"];
+		[dataPropertyList setObject:[NSNumber numberWithInteger:0.0] forKey:@"TimeMax"];
 		[dataPropertyList setObject:@"" forKey:@"Name"];
 		[dataPropertyList setObject:@"" forKey:@"Folder"];
 		[dataPropertyList setObject:@"" forKey:@"DataFileExtension"];
@@ -252,6 +255,27 @@ public:
 
 - (void)setCurrentTime:(double)currentTime {
 	[dataPropertyList setObject:[NSNumber numberWithDouble:currentTime] forKey:@"CurrentTime"];
+}
+
+- (NSInteger)currentCycle {
+	return [[dataPropertyList objectForKey:@"CurrentCycle"] integerValue];
+}
+
+- (void)setCurrentCycle:(NSInteger)currentCycle {
+	[dataPropertyList setObject:[NSNumber numberWithInteger:currentCycle] forKey:@"CurrentCycle"];
+}
+
+- (double)timeMin {
+	return [[dataPropertyList objectForKey:@"TimeMin"] doubleValue];    
+}
+
+- (double)timeMax {
+    return [[dataPropertyList objectForKey:@"TimeMax"] doubleValue];
+}
+
+- (void)setTimeMin:(double)min max:(double)max {
+	[dataPropertyList setObject:[NSNumber numberWithDouble:min] forKey:@"TimeMin"];
+	[dataPropertyList setObject:[NSNumber numberWithDouble:max] forKey:@"TimeMax"];    
 }
 
 - (double)minTime {
@@ -653,6 +677,9 @@ public:
 		labelArray = vtkStringArray::New();
 		labelArray->SetName([[self labelsArrayName] UTF8String]);
 		polyData->GetPointData()->AddArray(labelArray);
+        labelArray->Delete();
+        
+        labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
 	}
 	return self;
 }
@@ -782,6 +809,11 @@ public:
 	return polyData->GetNumberOfPoints();
 }
 
+- (void)readDataFromPath:(NSString*)path {
+    [super readDataFromPath:path];
+    labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
+}
+
 @end
 
 #pragma mark BJTubeData
@@ -805,7 +837,10 @@ public:
 		
 		radiusArray = vtkDoubleArray::New();
 		radiusArray->SetName([[self radiusArrayName] UTF8String]);
-		polyData->GetPointData()->AddArray(radiusArray);		
+		polyData->GetPointData()->AddArray(radiusArray);
+        radiusArray->Delete();
+        
+        radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
 	}
 	return self;
 }
@@ -865,19 +900,45 @@ public:
 	[self addPoint:point withRadius:[self currentRadius]];
 }
 
+- (void)addPoint:(double*)point atId:(int)pointId {
+	[self addPoint:point withRadius:[self currentRadius] atId:pointId];
+}
+
 - (void)addPoint:(double*)point withRadius:(double)radius {
-	vtkIdType pointId = polyData->GetPoints()->InsertNextPoint(point);
-	
-	vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
-	
+	[self addPoint:point withRadius:radius atId:(int)[self numberOfPoints]];
+}
+
+- (void)addPoint:(double*)point withRadius:(double)radius atId:(int)pointId {    
+    vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
+        
+	if (pointId < 0 || pointId > numberOfPoints) {
+		return;
+	}
+
+    vtkPoints* points = polyData->GetPoints();
+	vtkIdType i;
+    double apoint[3], aradius;
+	for (i=numberOfPoints-1; i>=pointId; i--) {
+        points->GetPoint(i,apoint);
+		points->InsertPoint(i+1,apoint);
+		aradius = radiusArray->GetValue(i);
+        radiusArray->InsertValue(i+1,aradius);
+	}
+
+    points->InsertPoint(pointId,point);
+    radiusArray->InsertValue(pointId,radius);
+
+    points->SetNumberOfPoints(numberOfPoints+1);
+	radiusArray->SetNumberOfTuples(numberOfPoints+1);
+
+    numberOfPoints = points->GetNumberOfPoints();
+    
 	vtkCellArray* cellArray = polyData->GetLines();
 	cellArray->Initialize();
 	cellArray->InsertNextCell((int)numberOfPoints);
 	for (int i=0; i<numberOfPoints; i++) {
 		cellArray->InsertCellPoint(i);
 	}
-
-	radiusArray->InsertValue(pointId,radius);
 	
 	polyData->Modified();
 }
@@ -885,10 +946,10 @@ public:
 - (void)removePoint:(int)pointId {
 	
 	vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
-	if (pointId > numberOfPoints-1) {
+	if (numberOfPoints == 0 || pointId < 0 || pointId > numberOfPoints-1) {
 		return;
 	}
-
+    
 	vtkCellArray* cellArray = polyData->GetLines();
 	cellArray->Initialize();
 	cellArray->InsertNextCell((int)numberOfPoints-1);
@@ -936,6 +997,11 @@ public:
 
 - (double)currentRadius {
 	return [[dataPropertyList objectForKey:@"CurrentRadius"] doubleValue];
+}
+
+- (void)readDataFromPath:(NSString*)path {
+    [super readDataFromPath:path];
+    radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
 }
 
 @end

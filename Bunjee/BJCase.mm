@@ -54,6 +54,9 @@ NSInteger sortData(id data1, id data2, void *context) {
 		notifyDataChangeEnabled = YES;
 		metaDataPropertyList = [[NSMutableDictionary alloc] init];
 		[self setMetaDataPropertyValue:[NSNumber numberWithDouble:0.0] withName:@"CurrentTime"];
+		[self setMetaDataPropertyValue:[NSNumber numberWithInteger:0] withName:@"CurrentCycle"];
+		[self setMetaDataPropertyValue:[NSNumber numberWithDouble:0.0] withName:@"TimeMin"];
+		[self setMetaDataPropertyValue:[NSNumber numberWithDouble:0.0] withName:@"TimeMax"];
 	}
 	return self;
 }
@@ -592,17 +595,59 @@ NSInteger sortData(id data1, id data2, void *context) {
 	}
 	return pathsOfScenes;
 }
-
+/*
 - (void)setCurrentTime:(double)theTime {
 	double currentTime = [[self metaDataPropertyValueWithName:@"CurrentTime"] doubleValue];
+    
 	if (theTime == currentTime) {
 		return;
 	}
-	currentTime = theTime;
+
+    [self setMetaDataPropertyValue:[NSNumber numberWithDouble:theTime] withName:@"CurrentTime"];
+
 	for (id key in [self allKeys]) {
 		BJData* theData = [self dataForKey:key];
 		if ([theData timeDependent] == YES) {
-			[theData setCurrentTime:currentTime];
+			[theData setCurrentTime:theTime];
+			[theData update];
+		}
+	}
+}
+*/
+
+- (void)setTimeMin:(double)timeMin max:(double)timeMax {
+    [self setMetaDataPropertyValue:[NSNumber numberWithDouble:timeMin] withName:@"TimeMin"];
+    [self setMetaDataPropertyValue:[NSNumber numberWithDouble:timeMax] withName:@"TimeMax"];
+
+    for (id key in [self allKeys]) {
+		BJData* theData = [self dataForKey:key];
+		if ([theData timeDependent] == YES) {
+			[theData setTimeMin:timeMin max:timeMax];
+			[theData update];
+		}
+	}
+}
+
+- (void)setCurrentTime:(double)theTime {
+    [self setCurrentTime:theTime cycle:[[self metaDataPropertyValueWithName:@"CurrentCycle"] integerValue]];
+}
+
+- (void)setCurrentTime:(double)theTime cycle:(NSInteger)theCycle {
+	double currentTime = [[self metaDataPropertyValueWithName:@"CurrentTime"] doubleValue];
+    NSInteger currentCycle = [[self metaDataPropertyValueWithName:@"CurrentCycle"] integerValue];
+    
+	if (theTime == currentTime && theCycle == currentCycle) {
+		return;
+	}
+
+    [self setMetaDataPropertyValue:[NSNumber numberWithDouble:theTime] withName:@"CurrentTime"];
+    [self setMetaDataPropertyValue:[NSNumber numberWithInteger:theCycle] withName:@"CurrentCycle"];
+
+	for (id key in [self allKeys]) {
+		BJData* theData = [self dataForKey:key];
+		if ([theData timeDependent] == YES) {
+			[theData setCurrentTime:theTime];
+			[theData setCurrentCycle:theCycle];
 			[theData update];
 		}
 	}
