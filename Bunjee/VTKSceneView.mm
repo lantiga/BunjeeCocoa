@@ -625,10 +625,10 @@ int BJComputeDirection(double theVector[3]) {
 	}
 	
 	if ([[notification userInfo] objectForKey:@"NewName"] != nil) {
-		sceneNameActor->SetInput([[NSString stringWithFormat:@"Scene: %@",[[notification userInfo] objectForKey:@"NewName"]] UTF8String]);	
+		sceneNameActor->SetInput([[NSString stringWithFormat:@"%@",[[notification userInfo] objectForKey:@"NewName"]] UTF8String]);	
 	}
 	else {
-		sceneNameActor->SetInput("Scene: -");	
+		sceneNameActor->SetInput("");	
 	}
 	[self setNeedsDisplay:YES];
 }
@@ -705,7 +705,7 @@ int BJComputeDirection(double theVector[3]) {
 	
 	sceneNameActor = vtkTextActor::New();
 	sceneNameActor->GetProperty()->SetColor(0.0,1.0,0.0);
-	sceneNameActor->SetInput("Scene: -");
+	sceneNameActor->SetInput("");
 	renderer->AddActor(sceneNameActor);
 
 	vtkCoordinate* coordinate = sceneNameActor->GetPositionCoordinate();
@@ -1859,7 +1859,7 @@ int BJComputeDirection(double theVector[3]) {
 
 	if (scene == nil) {
 		sliceViewAllowed = NO;
-		sceneNameActor->SetInput("Scene: -");
+		sceneNameActor->SetInput("");
 		[self setSceneMode];
 		[self setNeedsDisplay:YES];
 		return;
@@ -1929,10 +1929,10 @@ int BJComputeDirection(double theVector[3]) {
 	}
 
 	if ([scene name] != nil) {
-		sceneNameActor->SetInput([[NSString stringWithFormat:@"Scene: %@",[scene name]] UTF8String]);
+		sceneNameActor->SetInput([[NSString stringWithFormat:@"%@",[scene name]] UTF8String]);
 	}
 	else {
-		sceneNameActor->SetInput("Scene: -");
+		sceneNameActor->SetInput("");
 	}
 	
 	[self setNeedsDisplay:YES];
