@@ -173,4 +173,6 @@ enum {
 
 - (void)updateOrientationAnnotation;
 
+- (id)takeScreenshot;
+
 @end

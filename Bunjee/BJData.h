@@ -202,3 +202,13 @@ class vtkDoubleArray;
 - (NSString*)bifurcationGroupIdsArrayName;
 
 @end
+
+#pragma mark BJScreenshotData
+
+@interface BJScreenshotData : BJImageData {
+}
+
+- (NSString*)base64Image;
+
+@end
+

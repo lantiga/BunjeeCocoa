@@ -29,6 +29,8 @@
 #import "vtkCocoaRenderWindow.h"
 #import "vtkCommand.h"
 
+#import "vtkWindowToImageFilter.h"
+
 class vtkHighlightAnimationCallback : public vtkCommand
 {
 public:
@@ -1994,6 +1996,20 @@ int BJComputeDirection(double theVector[3]) {
 			[self setOrientationAnnotationRight:"I" left:"S"];
 			break;
 	}
+}
+
+- (id)takeScreenshot {
+    vtkWindowToImageFilter* windowToImage = vtkWindowToImageFilter::New();
+    windowToImage->SetInput([self renderer]->GetRenderWindow());
+    windowToImage->Update();
+    
+    id screenshotData = [[BJScreenshotData alloc] init];
+	[screenshotData setListed:NO];
+    [screenshotData imageData]->DeepCopy(windowToImage->GetOutput());
+	
+    windowToImage->Delete();
+    
+    return screenshotData;
 }
 
 @end
