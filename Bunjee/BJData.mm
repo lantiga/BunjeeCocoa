@@ -29,6 +29,7 @@
 #import "vtkXMLPolyDataReader.h"
 #import "vtkXMLPolyDataWriter.h"
 
+#import "vtkPNGReader.h"
 #import "vtkPNGWriter.h"
 
 #import "vtkImageTranslateExtent.h"
@@ -1250,6 +1251,23 @@ public:
 
 - (id)createDisplayObject {
 	return nil;
+}
+
+- (void)writeDataToPath:(NSString*)path {
+	vtkPNGWriter* writer = vtkPNGWriter::New();
+	writer->SetInput(imageData);
+	writer->SetFileName([path fileSystemRepresentation]);
+    writer->Write();
+	writer->Delete();
+}
+
+- (void)readDataFromPath:(NSString*)path {
+	vtkPNGReader* reader = vtkPNGReader::New();
+	reader->SetFileName([path fileSystemRepresentation]);
+    reader->Update();
+
+	imageData->DeepCopy(reader->GetOutput());
+	reader->Delete();
 }
 
 - (NSString*)base64forData:(NSData*)theData {
