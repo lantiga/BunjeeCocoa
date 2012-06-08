@@ -193,11 +193,16 @@
 - (void)saveCase:(id)theCase toPath:(NSString*)packagePath {
 	
     if([[NSFileManager defaultManager] fileExistsAtPath:packagePath]) {
+        /*
 		NSString* savePrompt = [NSString stringWithFormat:@"Saving case %@ will overwrite the existing saved case. Continue?",[theCase name]];
 		NSInteger alertReturn = NSRunAlertPanel(@"Save",savePrompt,@"OK",@"Cancel",nil);
 		if (alertReturn == NSAlertAlternateReturn) {
 			return;
 		}
+         */
+        /////////////////////////////////
+        //TODO: REMOVE AFTER GOING ATOMIC
+        /////////////////////////////////
 		[[NSFileManager defaultManager] removeItemAtPath:packagePath error:NULL];
 	}
 
