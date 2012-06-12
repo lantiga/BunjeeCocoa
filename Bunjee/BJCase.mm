@@ -478,9 +478,6 @@ NSInteger sortData(id data1, id data2, void *context) {
 
 - (BOOL)writeToPackageWithPath:(NSString*)packagePath {
     
-    //TODO: do this atomically. Create a temporary package. If successful, rename it over packagePath.
-    //TODO: write casePList first, so if there are any issues the method can exit immediately.
-    
 	NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSFileExtensionHidden, nil];
     [[NSFileManager defaultManager] createDirectoryAtPath:packagePath withIntermediateDirectories:YES attributes:attribs error:nil];
 	

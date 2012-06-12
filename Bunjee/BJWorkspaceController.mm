@@ -192,18 +192,17 @@
 
 - (void)saveCase:(id)theCase toPath:(NSString*)packagePath {
 	
-    if([[NSFileManager defaultManager] fileExistsAtPath:packagePath]) {
+    NSString* tmpPackagePath = [[[packagePath stringByDeletingPathExtension] stringByAppendingString:@"_tmp"] stringByAppendingPathExtension:@"bunjee"];
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:tmpPackagePath]) {
         /*
 		NSString* savePrompt = [NSString stringWithFormat:@"Saving case %@ will overwrite the existing saved case. Continue?",[theCase name]];
 		NSInteger alertReturn = NSRunAlertPanel(@"Save",savePrompt,@"OK",@"Cancel",nil);
 		if (alertReturn == NSAlertAlternateReturn) {
 			return;
 		}
-         */
-        /////////////////////////////////
-        //TODO: REMOVE AFTER GOING ATOMIC
-        /////////////////////////////////
-		[[NSFileManager defaultManager] removeItemAtPath:packagePath error:NULL];
+         */        
+		[[NSFileManager defaultManager] removeItemAtPath:tmpPackagePath error:NULL];
 	}
 
 	NSArray* sceneNamesToWrite = [workspace sceneNamesWithDataFromCase:[theCase name]];
@@ -216,7 +215,18 @@
 		[scenesToWrite addObject:sceneToWrite];
 	}
 	
-	[theCase writeToPackageWithPath:packagePath andScenes:scenesToWrite];
+	BOOL success = [theCase writeToPackageWithPath:tmpPackagePath andScenes:scenesToWrite];
+    
+    if (success) {
+        if([[NSFileManager defaultManager] fileExistsAtPath:packagePath]) {
+            [[NSFileManager defaultManager] removeItemAtPath:packagePath error:NULL];
+        }
+		[[NSFileManager defaultManager] moveItemAtPath:tmpPackagePath toPath:packagePath error:NULL];
+    }
+    else {
+		[[NSFileManager defaultManager] removeItemAtPath:tmpPackagePath error:NULL];
+        NSRunAlertPanel(@"Saving error",@"An error occurred while saving the case",@"OK",nil,nil);
+    }
 }
 
 - (void)closeCase:(id)theCase {
