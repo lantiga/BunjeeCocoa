@@ -829,6 +829,7 @@ public:
 		[dataPropertyList setObject:@"Radius" forKey:@"RadiusArrayName"];
 		[dataPropertyList setObject:@"Tube" forKey:@"Label"];
 		[dataPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"CurrentRadius"];
+		[dataPropertyList setObject:[NSNumber numberWithInteger:-1] forKey:@"CurrentPointId"];
 
 		vtkPoints* points = vtkPoints::New();
 		polyData->SetPoints(points);
@@ -944,6 +945,8 @@ public:
 	}
 	
 	polyData->Modified();
+    
+    [self setCurrentPointId:pointId];
 }
 
 - (void)removePoint:(int)pointId {
@@ -971,6 +974,13 @@ public:
 	radiusArray->SetNumberOfTuples(numberOfPoints-1);
 	
 	polyData->Modified();
+    
+    if (pointId == numberOfPoints-1) {
+        [self setCurrentPointId:numberOfPoints-2];
+    }
+    else {
+        [self setCurrentPointId:pointId];
+    }
 }
 
 - (void)removeLastPoint {
@@ -982,6 +992,7 @@ public:
 	polyData->GetLines()->Initialize();
 	radiusArray->SetNumberOfTuples(0);
 	polyData->Modified();
+    [self setCurrentPointId:-1];
 }
 
 - (NSInteger)numberOfPoints {
@@ -991,10 +1002,11 @@ public:
 - (void)setCurrentRadius:(double)radius {
 	[dataPropertyList setObject:[NSNumber numberWithDouble:radius] forKey:@"CurrentRadius"];
 	vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
-	if (numberOfPoints == 0) {
+    vtkIdType pointId = [self currentPointId];
+	if (numberOfPoints == 0 || pointId == -1) {
 		return;
 	}
-	radiusArray->SetValue(numberOfPoints-1,radius);
+	radiusArray->SetValue(pointId,radius);
 	polyData->Modified();
 }
 
@@ -1002,9 +1014,18 @@ public:
 	return [[dataPropertyList objectForKey:@"CurrentRadius"] doubleValue];
 }
 
+- (void)setCurrentPointId:(NSInteger)pointId {
+	[dataPropertyList setObject:[NSNumber numberWithInteger:pointId] forKey:@"CurrentPointId"];    
+}
+
+- (NSInteger)currentPointId {
+    return [[dataPropertyList objectForKey:@"CurrentPointId"] integerValue];
+}
+
 - (void)readDataFromPath:(NSString*)path {
     [super readDataFromPath:path];
     radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
+    [self setCurrentPointId:polyData->GetNumberOfPoints()-1];
 }
 
 @end

@@ -160,6 +160,9 @@ class vtkDoubleArray;
 - (void)setCurrentRadius:(double)radius;
 - (double)currentRadius;
 
+- (void)setCurrentPointId:(NSInteger)pointId;
+- (NSInteger)currentPointId;
+
 - (NSString*)label;
 - (void)setLabel:(NSString*)label;
 
