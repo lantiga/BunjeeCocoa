@@ -309,6 +309,17 @@ public:
 	[dataPropertyList setObject:theUniqueIdentifier forKey:@"UniqueIdentifier"];
 }
 
+- (void)requestDelete:(vtkObject*)obj {
+    [[self class] performSelectorOnMainThread:@selector(performDelete:) withObject:[NSValue valueWithPointer:obj] waitUntilDone:NO];
+}
+
++ (void)performDelete:(id)obj {
+    vtkObject* vtkobj = ((vtkObject*)[obj pointerValue]);
+    if (vtkobj) {
+        vtkobj->Delete();   
+    }
+}
+
 @end
 
 
@@ -330,6 +341,7 @@ public:
 
 - (void)finalize {
 	[self disableUpdateOnModified];
+    //[self requestDelete:imageData];
 	imageData->Delete();
 	[super finalize];
 }
@@ -554,7 +566,8 @@ public:
 
 - (void)finalize {
 	[self disableUpdateOnModified];
-	polyData->Delete();
+	//[self requestDelete:polyData];
+    polyData->Delete();
 	[super finalize];
 }
 
@@ -688,6 +701,7 @@ public:
 }
 
 - (void)finalize {
+    //[self requestDelete:labelArray];
 	labelArray->Delete();
 	[super finalize];
 }
@@ -850,7 +864,8 @@ public:
 }
 
 - (void)finalize {
-	radiusArray->Delete();
+	//[self requestDelete:radiusArray];
+    radiusArray->Delete();
 	[super finalize];
 }
 

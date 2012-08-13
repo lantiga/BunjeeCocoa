@@ -7,6 +7,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+class vtkObject;
 class vtkImageData;
 class vtkVolume;
 class vtkPolyData;
@@ -80,6 +81,9 @@ class vtkLineSource;
 - (void)setLUTToBlueToRedForActor:(vtkActor*)theActor;
 - (void)setLUTToRedToBlueForActor:(vtkActor*)theActor;
 - (void)setLUTToDivergingRedBlueForActor:(vtkActor*)theActor;
+
+- (void)requestDelete:(vtkObject*)obj;
++ (void)performDelete:(id)obj;
 
 @end
 

@@ -338,6 +338,17 @@
 	lut->Delete();
 }
 
+- (void)requestDelete:(vtkObject*)obj {
+    [[self class] performSelectorOnMainThread:@selector(performDelete:) withObject:[NSValue valueWithPointer:obj] waitUntilDone:NO];
+}
+
++ (void)performDelete:(id)obj {
+    vtkObject* vtkobj = ((vtkObject*)[obj pointerValue]);
+    if (vtkobj) {
+        vtkobj->Delete();   
+    }
+}
+
 @end
 
 #pragma mark BJImageDataDisplay
@@ -515,8 +526,9 @@
 }
 
 - (void)finalize {
-	polyDataActor->Delete();
-	[super finalize];
+    //[self requestDelete:polyDataActor];
+    polyDataActor->Delete();
+    [super finalize];
 }
 
 - (void)copyToClone:(id)clone {
@@ -643,6 +655,7 @@
 }
 
 - (void)finalize {
+    //[self requestDelete:polyDataActor];
 	polyDataActor->Delete();
 	[super finalize];
 }
@@ -787,6 +800,8 @@
 }
 
 - (void)finalize {
+    //[self requestDelete:labelActor];
+    //[self requestDelete:glyphs];
 	labelActor->Delete();
 	glyphs->Delete();
 	[super finalize];
@@ -955,6 +970,9 @@
 }
 
 - (void)finalize {
+    //[self requestDelete:glyphsActor];
+    //[self requestDelete:labelActor];
+    //[self requestDelete:glyphs];
 	glyphsActor->Delete();
 	labelActor->Delete();
 	glyphs->Delete();
@@ -1146,6 +1164,7 @@
 }
 
 - (void)finalize {
+    //[self requestDelete:tubeActor];
 	tubeActor->Delete();
 	[super finalize];
 }
@@ -1203,6 +1222,9 @@
 }
 
 - (void)finalize {
+    //[self requestDelete:planeSource];
+    //[self requestDelete:planeActor];
+    //[self requestDelete:edgeActor];
 	planeSource->Delete();
 	planeActor->Delete();
 	edgeActor->Delete();
@@ -1410,6 +1432,9 @@
 }
 
 - (void)finalize {
+    //[self requestDelete:arcActor];
+    //[self requestDelete:angleTextActor];
+    //[self requestDelete:planarityTextActor];
 	arcActor->Delete();
 	angleTextActor->Delete();
 	planarityTextActor->Delete();

@@ -8,6 +8,7 @@
 #import <Cocoa/Cocoa.h>
 
 //
+class vtkObject;
 class vtkImageData;
 class vtkPolyData;
 class vtkObject;
@@ -77,6 +78,9 @@ class vtkDoubleArray;
 
 - (id)createDisplayObject;
 - (id)defaultDisplayObjectName;
+
+- (void)requestDelete:(vtkObject*)obj;
++ (void)performDelete:(id)obj;
 
 @end
 
