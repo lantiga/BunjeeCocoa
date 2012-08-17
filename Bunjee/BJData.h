@@ -120,7 +120,6 @@ class vtkDoubleArray;
 #pragma mark BJSeedData
 
 @interface BJSeedData : BJPolyData {
-	vtkStringArray* labelArray;
 }
 
 - (void)addSeed:(double*)point;
@@ -144,7 +143,6 @@ class vtkDoubleArray;
 #pragma mark BJTubeData
 
 @interface BJTubeData : BJPolyData {
-	vtkDoubleArray* radiusArray;
 }
 
 - (void)generateSpline:(vtkPolyData*)polyData;

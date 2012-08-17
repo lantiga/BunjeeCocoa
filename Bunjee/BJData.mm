@@ -690,19 +690,15 @@ public:
 		polyData->SetPoints(points);
 		points->Delete();
 
-		labelArray = vtkStringArray::New();
+		vtkStringArray* labelArray = vtkStringArray::New();
 		labelArray->SetName([[self labelsArrayName] UTF8String]);
 		polyData->GetPointData()->AddArray(labelArray);
         labelArray->Delete();
-        
-        labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
 	}
 	return self;
 }
 
 - (void)finalize {
-    //[self requestDelete:labelArray];
-	labelArray->Delete();
 	[super finalize];
 }
 
@@ -727,6 +723,8 @@ public:
 - (void)setLabel:(NSString*)label {
 	//TODO: DO NOT ACCESS DICTIONARY DIRECTLY (UNLESS KEY-VALUE BINDING IS USED). INSTEAD USE METHOD AND POST NOTIFICATION (OR CALL UPDATE).
 	[dataPropertyList setObject:label forKey:@"Label"];
+    vtkStringArray* labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
+
 	if (!labelArray) {
 		return;
 	}
@@ -758,6 +756,8 @@ public:
 	if (maximumNumberOfSeeds > 0 and [self numberOfSeeds] == maximumNumberOfSeeds) {
 		return;
 	}
+    vtkStringArray* labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
+
 	polyData->GetPoints()->InsertNextPoint(point);
 	BOOL validLabel = NO;
 	if ([self label] != nil) {
@@ -775,6 +775,8 @@ public:
 }
 
 - (void)setSingleSeed:(double*)point {
+    vtkStringArray* labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
+
 	polyData->GetPoints()->SetNumberOfPoints(1);
 	polyData->GetPoints()->SetPoint(0,point);
 	labelArray->SetNumberOfTuples(1);
@@ -794,6 +796,8 @@ public:
 }
 
 - (void)removeSeed:(int)seedId {
+    vtkStringArray* labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
+
 	vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
 	if (seedId > numberOfPoints-1) {
 		return;
@@ -810,6 +814,8 @@ public:
 }
 
 - (void)removeLastSeed {
+    vtkStringArray* labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
+
 	vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
 	polyData->GetPoints()->SetNumberOfPoints(numberOfPoints-1);
 	labelArray->SetNumberOfTuples(numberOfPoints-1);
@@ -817,6 +823,7 @@ public:
 }
 
 - (void)removeAllSeeds {
+    vtkStringArray* labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
 	polyData->GetPoints()->SetNumberOfPoints(0);
 	labelArray->SetNumberOfTuples(0);
 	polyData->Modified();
@@ -828,7 +835,6 @@ public:
 
 - (void)readDataFromPath:(NSString*)path {
     [super readDataFromPath:path];
-    labelArray = vtkStringArray::SafeDownCast(polyData->GetPointData()->GetAbstractArray([[self labelsArrayName] UTF8String]));
 }
 
 @end
@@ -853,19 +859,15 @@ public:
 		polyData->SetLines(cellArray);
 		cellArray->Delete();
 		
-		radiusArray = vtkDoubleArray::New();
+		vtkDoubleArray* radiusArray = vtkDoubleArray::New();
 		radiusArray->SetName([[self radiusArrayName] UTF8String]);
 		polyData->GetPointData()->AddArray(radiusArray);
         radiusArray->Delete();
-        
-        radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
 	}
 	return self;
 }
 
 - (void)finalize {
-	//[self requestDelete:radiusArray];
-    radiusArray->Delete();
 	[super finalize];
 }
 
@@ -933,6 +935,8 @@ public:
 	if (pointId < 0 || pointId > numberOfPoints) {
 		return;
 	}
+    
+    vtkDoubleArray* radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
 
     vtkPoints* points = polyData->GetPoints();
 	vtkIdType i;
@@ -971,6 +975,8 @@ public:
 		return;
 	}
     
+    vtkDoubleArray* radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
+    
 	vtkCellArray* cellArray = polyData->GetLines();
 	cellArray->Initialize();
 	cellArray->InsertNextCell((int)numberOfPoints-1);
@@ -1002,7 +1008,9 @@ public:
 	[self removePoint:(int)[self numberOfPoints]-1];
 }
 
-- (void)removeAllPoints {
+- (void)removeAllPoints {    
+    vtkDoubleArray* radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
+
 	polyData->GetPoints()->SetNumberOfPoints(0);
 	polyData->GetLines()->Initialize();
 	radiusArray->SetNumberOfTuples(0);
@@ -1015,6 +1023,8 @@ public:
 }
 
 - (void)setCurrentRadius:(double)radius {
+    vtkDoubleArray* radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
+
 	[dataPropertyList setObject:[NSNumber numberWithDouble:radius] forKey:@"CurrentRadius"];
 	vtkIdType numberOfPoints = polyData->GetNumberOfPoints();
     vtkIdType pointId = [self currentPointId];
@@ -1039,7 +1049,6 @@ public:
 
 - (void)readDataFromPath:(NSString*)path {
     [super readDataFromPath:path];
-    radiusArray = vtkDoubleArray::SafeDownCast(polyData->GetPointData()->GetArray([[self radiusArrayName] UTF8String]));
     [self setCurrentPointId:polyData->GetNumberOfPoints()-1];
 }
 
