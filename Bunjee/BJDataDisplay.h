@@ -21,6 +21,7 @@ class vtkFieldData;
 class vtkGlyph3D;
 class vtkPlaneSource;
 class vtkLineSource;
+class vtkScalarsToColors;
 
 #pragma mark BJDataDisplay
 
@@ -81,6 +82,9 @@ class vtkLineSource;
 - (void)setLUTToBlueToRedForActor:(vtkActor*)theActor;
 - (void)setLUTToRedToBlueForActor:(vtkActor*)theActor;
 - (void)setLUTToDivergingRedBlueForActor:(vtkActor*)theActor;
+
+- (vtkScalarsToColors*)lut;
+- (NSString*)lutTitle;
 
 - (void)requestDelete:(vtkObject*)obj;
 + (void)performDelete:(id)obj;

@@ -48,8 +48,8 @@
 #import "vtkArcSource.h"
 #import "vtkPlaneSource.h"
 #import "vtkLineSource.h"
-
 #import "vtkLookupTable.h"
+#import "vtkScalarsToColors.h"
 
 #import "vtkMath.h"
 #import "vtkCommand.h"
@@ -338,6 +338,14 @@
 	lut->Delete();
 }
 
+- (vtkScalarsToColors*)lut {
+    return NULL;
+}
+
+- (NSString*)lutTitle {
+    return @"";
+}
+
 - (void)requestDelete:(vtkObject*)obj {
     [[self class] performSelectorOnMainThread:@selector(performDelete:) withObject:[NSValue valueWithPointer:obj] waitUntilDone:NO];
 }
@@ -509,6 +517,14 @@
 
 - (void)setLUTToDivergingRedBlue {
 	[self setLUTToDivergingRedBlueForActor:[self polyDataActor]];
+}
+
+- (vtkScalarsToColors*)lut {
+    return [self polyDataActor]->GetMapper()->GetLookupTable();
+}
+
+- (NSString*)lutTitle {
+    return [self displayPropertyValueWithName:@"ScalarArray"];
 }
 
 - (void)bindToDataObject:(BJPolyData*)theDataObject {
