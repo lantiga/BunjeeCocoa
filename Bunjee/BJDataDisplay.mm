@@ -497,11 +497,17 @@
 		//[displayPropertyList setObject:[NSNumber numberWithBool:NO] forKey:@"ScalarVisibility"];
 		[displayPropertyList setObject:@"" forKey:@"ScalarArray"];
 		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"Opacity"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:0.0] forKey:@"ScalarRangeMinFactor"];
+		[displayPropertyList setObject:[NSNumber numberWithDouble:1.0] forKey:@"ScalarRangeMaxFactor"];
 		[displayPropertyList setObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithDeviceRed:1.0 green:1.0 blue:1.0 alpha:1.0]] forKey:@"Color"];
 		//[self addEditorPropertyWithName:@"ScalarVisibility" type:@"boolean" label:@"Scalar Visibility" group:@"Color"];
 		[self addEditorPropertyWithName:@"ScalarArray" type:@"dataarray" label:@"Array" group:@"Appearance"];
 		[self addEditorPropertyWithName:@"Opacity" type:@"float" label:@"Opacity" group:@"Appearance" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
 																											   [NSNumber numberWithDouble:0.0],@"MinValue",[NSNumber numberWithDouble:1.0],@"MaxValue",nil]];
+        [self addEditorPropertyWithName:@"ScalarRangeMinFactor" type:@"float" label:@"Range min factor" group:@"Appearance" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                                  [NSNumber numberWithDouble:0.0],@"MinValue",[NSNumber numberWithDouble:1.0],@"MaxValue",nil]];
+        [self addEditorPropertyWithName:@"ScalarRangeMaxFactor" type:@"float" label:@"Range max factor" group:@"Appearance" attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                                  [NSNumber numberWithDouble:0.0],@"MinValue",[NSNumber numberWithDouble:1.0],@"MaxValue",nil]];
 		[self addEditorPropertyWithName:@"Color" type:@"color" label:@"Color" group:@"Appearance"];
 	}
 	return self;
@@ -597,6 +603,8 @@
 		return;
 	}
 	float opacity = [[self displayPropertyValueWithName:@"Opacity"] floatValue];
+	float rangeMinFactor = [[self displayPropertyValueWithName:@"ScalarRangeMinFactor"] floatValue];
+	float rangeMaxFactor = [[self displayPropertyValueWithName:@"ScalarRangeMaxFactor"] floatValue];
 	polyDataActor->GetProperty()->SetOpacity(opacity);
 	//TODO: problem here: if two arrays with same name as pointdata and celldata, pointdata always wins. Need a way to disambiguate.
 	//BOOL scalarVisibility = [[self displayPropertyValueWithName:@"ScalarVisibility"] boolValue];
@@ -608,8 +616,12 @@
 			polyDataActor->GetMapper()->ScalarVisibilityOn();
 			polyDataActor->GetMapper()->SetScalarModeToUsePointFieldData();
 			polyDataActor->GetMapper()->SelectColorArray([scalarArrayName UTF8String]);
-			//TODO: set range as property
-			polyDataActor->GetMapper()->SetScalarRange(scalarArray->GetRange());
+            double scalarRange[2];
+            scalarArray->GetRange(scalarRange);
+            double rescaledScalarRange[2];
+            rescaledScalarRange[0] = scalarRange[0] + (scalarRange[1]-scalarRange[0]) * rangeMinFactor;
+            rescaledScalarRange[1] = scalarRange[0] + (scalarRange[1]-scalarRange[0]) * rangeMaxFactor;            
+			polyDataActor->GetMapper()->SetScalarRange(rescaledScalarRange);
 		}
 		else {
 			scalarArray = [[self polyDataObject] polyData]->GetCellData()->GetArray([scalarArrayName UTF8String]);
@@ -617,8 +629,12 @@
 				polyDataActor->GetMapper()->ScalarVisibilityOn();
 				polyDataActor->GetMapper()->SetScalarModeToUseCellFieldData();
 				polyDataActor->GetMapper()->SelectColorArray([scalarArrayName UTF8String]);
-				//TODO: set range as property
-				polyDataActor->GetMapper()->SetScalarRange(scalarArray->GetRange());
+                double scalarRange[2];
+                scalarArray->GetRange(scalarRange);
+                double rescaledScalarRange[2];
+                rescaledScalarRange[0] = scalarRange[0] + (scalarRange[1]-scalarRange[0]) * rangeMinFactor;
+                rescaledScalarRange[1] = scalarRange[0] + (scalarRange[1]-scalarRange[0]) * rangeMaxFactor;            
+				polyDataActor->GetMapper()->SetScalarRange(rescaledScalarRange);
 			}
 			else {
 				polyDataActor->GetMapper()->ScalarVisibilityOff();
