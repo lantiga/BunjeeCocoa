@@ -90,6 +90,9 @@
 
 - (void)newCaseFromImageWithData:(NSData*)volumeData info:(NSDictionary*)info {
 	NSString* caseName = [info objectForKey:@"PatientName"];
+    if (caseName == nil || [caseName isEqualToString:@""]) {
+        caseName = [info objectForKey:@"PatientUID"];
+    }
 	BJCase* theCase = [workspace newCaseWithName:caseName];
 	NSLog(@"%@",info);
 	[theCase setMetaDataPropertyValue:[info objectForKey:@"PatientName"] withName:@"PatientName"];
